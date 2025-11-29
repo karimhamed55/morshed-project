@@ -1,0 +1,15 @@
+C:\Users\USER\Desktop\depi\Morshed.Infrastructure\bin\Debug\net9.0\Morshed.Infrastructure.deps.json
+C:\Users\USER\Desktop\depi\Morshed.Infrastructure\bin\Debug\net9.0\Morshed.Infrastructure.dll
+C:\Users\USER\Desktop\depi\Morshed.Infrastructure\bin\Debug\net9.0\Morshed.Infrastructure.pdb
+C:\Users\USER\Desktop\depi\Morshed.Infrastructure\bin\Debug\net9.0\Morshed.Core.dll
+C:\Users\USER\Desktop\depi\Morshed.Infrastructure\bin\Debug\net9.0\Morshed.Core.pdb
+C:\Users\USER\Desktop\depi\Morshed.Infrastructure\obj\Debug\net9.0\Morshed.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\depi\Morshed.Infrastructure\obj\Debug\net9.0\Morshed.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Desktop\depi\Morshed.Infrastructure\obj\Debug\net9.0\Morshed.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\USER\Desktop\depi\Morshed.Infrastructure\obj\Debug\net9.0\Morshed.Infrastructure.AssemblyInfo.cs
+C:\Users\USER\Desktop\depi\Morshed.Infrastructure\obj\Debug\net9.0\Morshed.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\depi\Morshed.Infrastructure\obj\Debug\net9.0\Morshed..6AE6AE4E.Up2Date
+C:\Users\USER\Desktop\depi\Morshed.Infrastructure\obj\Debug\net9.0\Morshed.Infrastructure.dll
+C:\Users\USER\Desktop\depi\Morshed.Infrastructure\obj\Debug\net9.0\refint\Morshed.Infrastructure.dll
+C:\Users\USER\Desktop\depi\Morshed.Infrastructure\obj\Debug\net9.0\Morshed.Infrastructure.pdb
+C:\Users\USER\Desktop\depi\Morshed.Infrastructure\obj\Debug\net9.0\ref\Morshed.Infrastructure.dll

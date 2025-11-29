@@ -1,0 +1,46 @@
+@model Morshed.Core.Entities.Tour
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<h1>@Model.Title</h1>
+<h4 class="text-muted">@Model.Province?.NameEn - @Model.Days Days</h4>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-8">
+        <h3>Itinerary</h3>
+        @if (Model.Stops != null && Model.Stops.Any())
+        {
+            <div class="list-group">
+                @foreach (var stop in Model.Stops.OrderBy(s => s.DayNumber).ThenBy(s => s.OrderIndex))
+                {
+                    <div class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Day @stop.DayNumber: @stop.Place?.Name</h5>
+                            <small>Step @stop.OrderIndex</small>
+                        </div>
+                        <p class="mb-1">@stop.Place?.Description</p>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-warning">
+                No stops added yet. <a href="#" class="alert-link">Add places now</a> (Drag & Drop feature pending).
+            </div>
+        }
+    </div>
+    <div class="col-md-4">
+        <div class="card border-pharaonic">
+            <div class="card-body">
+                <h5 class="card-title">Tour Summary</h5>
+                <p><strong>Total Cost:</strong> Not Calculated</p>
+                <button class="btn btn-primary w-100">Edit Tour</button>
+            </div>
+        </div>
+    </div>
+</div>

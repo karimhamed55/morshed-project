@@ -1,0 +1,12 @@
+C:\Users\USER\Desktop\depi\Morshed.Core\obj\Debug\net9.0\Morshed.Core.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\depi\Morshed.Core\obj\Debug\net9.0\Morshed.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Desktop\depi\Morshed.Core\obj\Debug\net9.0\Morshed.Core.AssemblyInfoInputs.cache
+C:\Users\USER\Desktop\depi\Morshed.Core\obj\Debug\net9.0\Morshed.Core.AssemblyInfo.cs
+C:\Users\USER\Desktop\depi\Morshed.Core\obj\Debug\net9.0\Morshed.Core.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\depi\Morshed.Core\bin\Debug\net9.0\Morshed.Core.deps.json
+C:\Users\USER\Desktop\depi\Morshed.Core\bin\Debug\net9.0\Morshed.Core.dll
+C:\Users\USER\Desktop\depi\Morshed.Core\bin\Debug\net9.0\Morshed.Core.pdb
+C:\Users\USER\Desktop\depi\Morshed.Core\obj\Debug\net9.0\Morshed.Core.dll
+C:\Users\USER\Desktop\depi\Morshed.Core\obj\Debug\net9.0\refint\Morshed.Core.dll
+C:\Users\USER\Desktop\depi\Morshed.Core\obj\Debug\net9.0\Morshed.Core.pdb
+C:\Users\USER\Desktop\depi\Morshed.Core\obj\Debug\net9.0\ref\Morshed.Core.dll

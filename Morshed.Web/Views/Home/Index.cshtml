@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Morshed.Core.Entities.Province>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="jumbotron text-center bg-transparent mb-5">
+    <h1 class="display-3 text-gold" style="font-family: 'Cinzel', serif; text-shadow: 2px 2px 4px #000;">Welcome to Morshed</h1>
+    <p class="lead text-dark font-weight-bold">Your Ultimate Guide to Egypt's Ancient Wonders</p>
+    <a asp-controller="Province" asp-action="Index" class="btn btn-primary btn-lg mt-3">Start Your Journey</a>
+</div>
+
+<div class="row text-center mb-5">
+    <div class="col-md-4">
+        <i class="fas fa-landmark fa-4x text-gold mb-3"></i>
+        <h3>Historic Sites</h3>
+        <p>Explore thousands of years of history in Luxor, Aswan, and Cairo.</p>
+    </div>
+    <div class="col-md-4">
+        <i class="fas fa-umbrella-beach fa-4x text-blue mb-3"></i>
+        <h3>Relaxing Beaches</h3>
+        <p>Unwind in the pristine waters of Sharm El-Sheikh and Hurghada.</p>
+    </div>
+    <div class="col-md-4">
+        <i class="fas fa-map-marked-alt fa-4x text-gold mb-3"></i>
+        <h3>Custom Tours</h3>
+        <p>Plan your perfect itinerary with our easy-to-use tour builder.</p>
+    </div>
+</div>
+
+<h2 class="text-center mb-4">Featured Destinations</h2>
+<div class="row">
+    @foreach (var item in Model.Take(3))
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-pharaonic">
+                <img src="@item.ThumbnailUrl" class="card-img-top" alt="@item.NameEn" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">@item.NameEn</h5>
+                    <p class="card-text text-truncate">@item.Description</p>
+                    <a asp-controller="Province" asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-primary">Discover</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

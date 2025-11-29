@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h1>Admin Dashboard</h1>
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-header">Places Management</div>
+            <div class="card-body">
+                <h5 class="card-title">Manage Tourist Sites</h5>
+                <p class="card-text">Add, edit, or remove places from the database.</p>
+                <a asp-action="ManagePlaces" class="btn btn-light">Go to Places</a>
+                <a asp-action="CreatePlace" class="btn btn-success mt-2">Add New Place</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-header">Reviews Management</div>
+            <div class="card-body">
+                <h5 class="card-title">Moderation</h5>
+                <p class="card-text">Review and moderate user comments.</p>
+                <a asp-action="ManageReviews" class="btn btn-light">Go to Reviews</a>
+            </div>
+        </div>
+    </div>
+</div>

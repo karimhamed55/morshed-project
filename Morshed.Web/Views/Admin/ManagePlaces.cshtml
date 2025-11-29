@@ -1,0 +1,56 @@
+@using Morshed.Core.Entities
+@model IEnumerable<Place>
+
+@{
+    ViewData["Title"] = "Manage Places";
+}
+
+<div class="container mt-4">
+    <h2>Manage Places</h2>
+    <a asp-action="CreatePlace" class="btn btn-success mb-3">Add New Place</a>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Category</td>
+                        <td>
+                            @{
+                                var description = item.Description;
+                                if (!string.IsNullOrEmpty(description) && description.Length > 100)
+                                {
+                                    description = description.Substring(0, 100) + "...";
+                                }
+                            }
+                            @description
+                        </td>
+                        <td>
+                            <a asp-action="EditPlace" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Edit</a>
+                            <form asp-action="DeletePlace" asp-route-id="@item.Id" method="post" style="display:inline;" onsubmit="return confirm('Delete this place?');">
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4" class="text-center">No places found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

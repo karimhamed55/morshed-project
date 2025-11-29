@@ -1,0 +1,35 @@
+@model IEnumerable<Morshed.Core.Entities.Place>
+
+@{
+    ViewData["Title"] = "Search Results";
+}
+
+<h1>Search Results</h1>
+
+<form asp-action="Index" method="get" class="mb-4">
+    <div class="input-group">
+        <input type="text" name="query" class="form-control" placeholder="Search places..." value="@ViewBag.Query">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+
+@if (Model != null && Model.Any())
+{
+    <div class="list-group">
+        @foreach (var item in Model)
+        {
+            <a asp-controller="Place" asp-action="Details" asp-route-id="@item.Id" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">@item.Name</h5>
+                    <small>@item.Category</small>
+                </div>
+                <p class="mb-1">@item.Description</p>
+                <small>@item.Address</small>
+            </a>
+        }
+    </div>
+}
+else if (ViewBag.Query != null)
+{
+    <div class="alert alert-info">No results found for "@ViewBag.Query".</div>
+}

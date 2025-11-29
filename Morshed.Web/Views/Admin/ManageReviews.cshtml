@@ -1,0 +1,44 @@
+@model IEnumerable<Morshed.Core.Entities.Review>
+
+@{
+    ViewData["Title"] = "Manage Reviews";
+}
+
+<h1>Manage Reviews</h1>
+
+<div class="card border-pharaonic">
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Place</th>
+                    <th>Rating</th>
+                    <th>Comment</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.User?.UserName</td>
+                            <td>@item.Place?.Name</td>
+                            <td><span class="text-warning">@item.Rating <i class="fas fa-star"></i></span></td>
+                            <td>@item.Comment</td>
+                            <td>@item.CreatedAt.ToShortDateString()</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5" class="text-center text-muted">No reviews found.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

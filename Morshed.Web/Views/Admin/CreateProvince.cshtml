@@ -1,0 +1,20 @@
+@model Morshed.Core.Entities.Province
+
+@{
+    ViewData["Title"] = "Add Province";
+}
+
+<div class="container mt-4">
+    <h2>Add New Province</h2>
+    <form asp-action="CreateProvince" method="post">
+        <div class="mb-3">
+            <label asp-for="NameEn" class="form-label">Province Name (English)</label>
+            <input asp-for="NameEn" class="form-control" required />
+            <span asp-validation-for="NameEn" class="text-danger"></span>
+        </div>
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Create</button>
+            <a asp-action="CreatePlace" class="btn btn-secondary ms-2">Cancel</a>
+        </div>
+    </form>
+</div>
