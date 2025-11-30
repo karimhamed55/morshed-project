@@ -1,5 +1,17 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/Morshed.Web/css/about.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\about.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-z9JOo3bguUXElZciewzop8PcDUpZr3sksM9VGaf6/m0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"6736"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022z9JOo3bguUXElZciewzop8PcDUpZr3sksM9VGaf6/m0=\u0022"},{"Name":"Last-Modified","Value":"Sun, 30 Nov 2025 18:32:51 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Morshed.Web/css/about.xwtjb53bi6.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\about.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"xwtjb53bi6"},{"Name":"integrity","Value":"sha256-z9JOo3bguUXElZciewzop8PcDUpZr3sksM9VGaf6/m0="},{"Name":"label","Value":"_content/Morshed.Web/css/about.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"6736"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022z9JOo3bguUXElZciewzop8PcDUpZr3sksM9VGaf6/m0=\u0022"},{"Name":"Last-Modified","Value":"Sun, 30 Nov 2025 18:32:51 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Morshed.Web/css/all.3mu0h9tx89.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\all.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

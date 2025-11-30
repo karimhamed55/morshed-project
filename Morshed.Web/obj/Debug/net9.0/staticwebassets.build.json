@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JRXcJiZd5U7SgiS6OSUHDxJqifIfdVi1Efk9uRFEnP0=",
+  "Hash": "Kkkug2/Vk9DFBZB6EuSnbwI+WHt1iNZ6jZ1QA2GmsvE=",
   "Source": "Morshed.Web",
   "BasePath": "_content/Morshed.Web",
   "Mode": "Default",
@@ -1403,6 +1403,27 @@
       "OriginalItemSpec": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
+      "Identity": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\obj\\Debug\\net9.0\\compressed\\rf7hfb51x5-xwtjb53bi6.gz",
+      "SourceId": "Morshed.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/Morshed.Web",
+      "RelativePath": "css/about#[.{fingerprint=xwtjb53bi6}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\about.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "nrq3363hdh",
+      "Integrity": "vSowcRmllfz80l6zuLVtIw6kEKMaVlDM5aNVx+HPQt8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\about.css"
+    },
+    {
       "Identity": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\obj\\Debug\\net9.0\\compressed\\u5jxoyd9kh-pj5nd1wqec.gz",
       "SourceId": "Morshed.Web",
       "SourceType": "Discovered",
@@ -1632,6 +1653,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\Morshed.Web.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\about.css",
+      "SourceId": "Morshed.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\",
+      "BasePath": "_content/Morshed.Web",
+      "RelativePath": "css/about#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xwtjb53bi6",
+      "Integrity": "z9JOo3bguUXElZciewzop8PcDUpZr3sksM9VGaf6/m0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\about.css"
     },
     {
       "Identity": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\all.css",
@@ -4281,6 +4323,304 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "css/about.css",
+      "AssetFile": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\obj\\Debug\\net9.0\\compressed\\rf7hfb51x5-xwtjb53bi6.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000562429696"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1777"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vSowcRmllfz80l6zuLVtIw6kEKMaVlDM5aNVx+HPQt8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Nov 2025 18:32:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"z9JOo3bguUXElZciewzop8PcDUpZr3sksM9VGaf6/m0=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-z9JOo3bguUXElZciewzop8PcDUpZr3sksM9VGaf6/m0="
+        }
+      ]
+    },
+    {
+      "Route": "css/about.css",
+      "AssetFile": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\about.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6736"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z9JOo3bguUXElZciewzop8PcDUpZr3sksM9VGaf6/m0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Nov 2025 18:32:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-z9JOo3bguUXElZciewzop8PcDUpZr3sksM9VGaf6/m0="
+        }
+      ]
+    },
+    {
+      "Route": "css/about.css.gz",
+      "AssetFile": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\obj\\Debug\\net9.0\\compressed\\rf7hfb51x5-xwtjb53bi6.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1777"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vSowcRmllfz80l6zuLVtIw6kEKMaVlDM5aNVx+HPQt8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Nov 2025 18:32:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vSowcRmllfz80l6zuLVtIw6kEKMaVlDM5aNVx+HPQt8="
+        }
+      ]
+    },
+    {
+      "Route": "css/about.xwtjb53bi6.css",
+      "AssetFile": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\obj\\Debug\\net9.0\\compressed\\rf7hfb51x5-xwtjb53bi6.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000562429696"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1777"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vSowcRmllfz80l6zuLVtIw6kEKMaVlDM5aNVx+HPQt8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Nov 2025 18:32:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"z9JOo3bguUXElZciewzop8PcDUpZr3sksM9VGaf6/m0=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xwtjb53bi6"
+        },
+        {
+          "Name": "label",
+          "Value": "css/about.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-z9JOo3bguUXElZciewzop8PcDUpZr3sksM9VGaf6/m0="
+        }
+      ]
+    },
+    {
+      "Route": "css/about.xwtjb53bi6.css",
+      "AssetFile": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\about.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6736"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z9JOo3bguUXElZciewzop8PcDUpZr3sksM9VGaf6/m0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Nov 2025 18:32:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xwtjb53bi6"
+        },
+        {
+          "Name": "label",
+          "Value": "css/about.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-z9JOo3bguUXElZciewzop8PcDUpZr3sksM9VGaf6/m0="
+        }
+      ]
+    },
+    {
+      "Route": "css/about.xwtjb53bi6.css.gz",
+      "AssetFile": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\obj\\Debug\\net9.0\\compressed\\rf7hfb51x5-xwtjb53bi6.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1777"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vSowcRmllfz80l6zuLVtIw6kEKMaVlDM5aNVx+HPQt8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Nov 2025 18:32:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xwtjb53bi6"
+        },
+        {
+          "Name": "label",
+          "Value": "css/about.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vSowcRmllfz80l6zuLVtIw6kEKMaVlDM5aNVx+HPQt8="
+        }
+      ]
+    },
     {
       "Route": "css/all.3mu0h9tx89.css",
       "AssetFile": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\obj\\Debug\\net9.0\\compressed\\z9ojwqjwrb-3mu0h9tx89.gz",

@@ -1,0 +1,154 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "About Us";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morshed - About Us</title>
+
+    <!-- Links -->
+    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css)">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css?v=1.2">
+    <link rel="stylesheet" href="~/css/nav_buttons.css?v=1.2">
+    <link rel="stylesheet" href="~/css/about.css?v=1.0"> <!-- الملف الجديد -->
+    <!-- Fonts -->
+    <link href="[https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap)" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo-left.png" width="65" height="65">
+                    <img src="~/images/Logo-right.png" width="140" height="35" class="mt-1">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link active" asp-controller="Home" asp-action="About">ABOUT US</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Province" asp-action="Index">PROVINCE</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Contact">CONTACT US</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="about-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Our Story</h1>
+            <p class="hero-subtitle">Discover the passion behind Morshed</p>
+        </div>
+    </section>
+
+    <!-- STORY SECTION -->
+    <section class="story-section">
+        <div class="story-image">
+            <img src="~/images/template_1.jpg" alt="Our Story"> <!-- صورة معبرة -->
+        </div>
+        <div class="story-text">
+            <h2>Who We Are</h2>
+            <p>
+                At <strong>Morshed</strong>, we believe that travel is more than just visiting places; it's about connecting with history, culture, and people. Founded in the heart of Egypt, our mission is to show the world the true beauty of our ancient land.
+            </p>
+            <p>
+                From the majestic Pyramids of Giza to the serene beaches of the Red Sea, we curate experiences that leave a lasting impression. We are a team of passionate locals and travel experts dedicated to providing you with authentic, safe, and unforgettable journeys.
+            </p>
+            <p>
+                Whether you are a history buff, an adventure seeker, or someone looking for relaxation, Morshed is your trusted guide to the hidden gems of Egypt.
+            </p>
+        </div>
+    </section>
+
+    <!-- VALUES SECTION -->
+    <section class="values-section">
+        <div class="values-header">
+            <h4>Why Choose Us</h4>
+            <h2>Our Core Values</h2>
+        </div>
+        <div class="values-grid">
+            <!-- Value 1 -->
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-gem"></i></div>
+                <h3>Quality & Luxury</h3>
+                <p>We strive to provide the highest quality of service, selecting the best accommodations and transportation to ensure your comfort.</p>
+            </div>
+            <!-- Value 2 -->
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-user-shield"></i></div>
+                <h3>Safety First</h3>
+                <p>Your safety is our priority. We work with certified guides and partners to ensure a secure and worry-free travel experience.</p>
+            </div>
+            <!-- Value 3 -->
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-heart"></i></div>
+                <h3>Passion & Culture</h3>
+                <p>We don't just show you Egypt; we help you feel it. Our guides are passionate storytellers who bring history to life.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM SECTION (Optional Showcase) -->
+    <section class="team-section">
+        <h2 style="font-family: 'Playfair Display'; color: var(--primary-dark); font-size: 2.5rem;">Meet The Team</h2>
+        <p style="color: #777;">The minds behind your perfect journey</p>
+
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="[https://via.placeholder.com/200](https://via.placeholder.com/200)" alt="Team Member">
+                </div>
+                <h4>Ahmed Ali</h4>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="[https://via.placeholder.com/200](https://via.placeholder.com/200)" alt="Team Member">
+                </div>
+                <h4>Sara Hassan</h4>
+                <p>Travel Consultant</p>
+            </div>
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="[https://via.placeholder.com/200](https://via.placeholder.com/200)" alt="Team Member">
+                </div>
+                <h4>Omar Khaled</h4>
+                <p>Senior Guide</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="font-family: 'Poppins', sans-serif; color:#eaf4f9; background-color:#0e1a24; padding-top:30px;">
+        <div class="lowerparent" style="text-align:center; padding:20px 0; font-size:14px;">
+            <p>Copyright © 2025 Morshed.com | Crafted with <i class="fa-solid fa-heart fa-beat" style="color:var(--gold);"></i></p>
+        </div>
+    </footer>
+
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/script.js"></script>
+    <script>
+        function toggleHeart(element) {
+            if (element.classList.contains('fa-regular')) {
+                element.classList.remove('fa-regular'); element.classList.add('fa-solid'); element.style.color = '#F97316';
+            } else {
+                element.classList.remove('fa-solid'); element.classList.add('fa-regular'); element.style.color = 'var(--gold)';
+            }
+        }
+    </script>
+
+    <script src="~/js/bootstrap.min.js"></script>
+</body>
+</html>

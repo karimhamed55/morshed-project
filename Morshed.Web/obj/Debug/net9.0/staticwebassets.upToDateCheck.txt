@@ -63,6 +63,7 @@ C:\Users\USER\Desktop\depi\Morshed.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-
 C:\Users\USER\Desktop\depi\Morshed.Web\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
 C:\Users\USER\Desktop\depi\Morshed.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
 C:\Users\USER\Desktop\depi\Morshed.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+C:\Users\USER\Desktop\depi\Morshed.Web\wwwroot\css\about.css
 C:\Users\USER\Desktop\depi\Morshed.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
 C:\Users\USER\Desktop\depi\Morshed.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
 C:\Users\USER\Desktop\depi\Morshed.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
@@ -71,6 +72,7 @@ C:\Users\USER\Desktop\depi\Morshed.Web\wwwroot\lib\jquery-validation\dist\additi
 C:\Users\USER\Desktop\depi\Morshed.Web\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
 C:\Users\USER\Desktop\depi\Morshed.Web\wwwroot\css\all.css
 C:\Users\USER\Desktop\depi\Morshed.Web\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+wwwroot\css\about.css
 wwwroot\css\all.css
 wwwroot\css\auth.css
 wwwroot\css\bootstrap.min.css

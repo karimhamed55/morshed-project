@@ -7,6 +7,30 @@
       "RelativeMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|solutionrelative:morshed.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|c:\\users\\user\\desktop\\depi\\morshed.web\\views\\account\\settings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|solutionrelative:morshed.web\\views\\account\\settings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|c:\\users\\user\\desktop\\depi\\morshed.web\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|solutionrelative:morshed.web\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|c:\\users\\user\\desktop\\depi\\morshed.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|solutionrelative:morshed.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|c:\\users\\user\\desktop\\depi\\morshed.web\\wwwroot\\css\\about.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|solutionrelative:morshed.web\\wwwroot\\css\\about.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|c:\\users\\user\\desktop\\depi\\morshed.web\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|solutionrelative:morshed.web\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|c:\\users\\user\\desktop\\depi\\morshed.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|solutionrelative:morshed.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|c:\\users\\user\\desktop\\depi\\morshed.web\\views\\province\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|solutionrelative:morshed.web\\views\\province\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -17,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|c:\\users\\user\\desktop\\depi\\morshed.web\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|solutionrelative:morshed.web\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|c:\\users\\user\\desktop\\depi\\morshed.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|solutionrelative:morshed.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|c:\\users\\user\\desktop\\depi\\morshed.web\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -47,10 +67,6 @@
       "RelativeMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|solutionrelative:morshed.web\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|c:\\users\\user\\desktop\\depi\\morshed.web\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|solutionrelative:morshed.web\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|c:\\users\\user\\desktop\\depi\\morshed.web\\wwwroot\\css\\user_dashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|solutionrelative:morshed.web\\wwwroot\\css\\user_dashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
@@ -65,10 +81,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|c:\\users\\user\\desktop\\depi\\morshed.web\\controllers\\provincecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|solutionrelative:morshed.web\\controllers\\provincecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|c:\\users\\user\\desktop\\depi\\morshed.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|solutionrelative:morshed.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{65710A63-FE3E-480C-9A84-D75E7F16536E}|Morshed.Web\\Morshed.Web.csproj|c:\\users\\user\\desktop\\depi\\morshed.web\\views\\place\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -90,7 +102,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,19 +110,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "contact.css",
-              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\contact.css",
-              "RelativeDocumentMoniker": "Morshed.Web\\wwwroot\\css\\contact.css",
-              "ToolTip": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\contact.css",
-              "RelativeToolTip": "Morshed.Web\\wwwroot\\css\\contact.css",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAowIsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-30T16:57:55.36Z"
+              "DocumentIndex": 1,
+              "Title": "Settings.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Views\\Account\\Settings.cshtml",
+              "RelativeDocumentMoniker": "Morshed.Web\\Views\\Account\\Settings.cshtml",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Views\\Account\\Settings.cshtml",
+              "RelativeToolTip": "Morshed.Web\\Views\\Account\\Settings.cshtml",
+              "ViewState": "AgIAABMAAAAAAAAAAAAIwB8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-30T18:52:57.844Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Views\\Home\\About.cshtml",
+              "RelativeDocumentMoniker": "Morshed.Web\\Views\\Home\\About.cshtml",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Views\\Home\\About.cshtml",
+              "RelativeToolTip": "Morshed.Web\\Views\\Home\\About.cshtml",
+              "ViewState": "AgIAAI4AAAAAAAAAAADwv5kAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-30T18:26:20.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Models\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "Morshed.Web\\Models\\LoginViewModel.cs",
@@ -122,19 +148,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Morshed.Web\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Morshed.Web\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAwwCAAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAwCwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T16:53:10.75Z"
+              "WhenOpened": "2025-11-30T16:53:10.75Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "PlaceController.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Controllers\\PlaceController.cs",
               "RelativeDocumentMoniker": "Morshed.Web\\Controllers\\PlaceController.cs",
@@ -146,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Morshed.Web\\Controllers\\AuthController.cs",
@@ -164,14 +191,14 @@
               "RelativeDocumentMoniker": "Morshed.Web\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Morshed.Web\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAP0BAAAAAAAAAAAIwAUCAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAACoAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-30T03:01:05.345Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Views\\Province\\Index.cshtml",
               "RelativeDocumentMoniker": "Morshed.Web\\Views\\Province\\Index.cshtml",
@@ -179,12 +206,37 @@
               "RelativeToolTip": "Morshed.Web\\Views\\Province\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-30T03:02:57.623Z",
+              "WhenOpened": "2025-11-30T03:02:57.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Views\\Account\\Profile.cshtml",
+              "RelativeDocumentMoniker": "Morshed.Web\\Views\\Account\\Profile.cshtml",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Views\\Account\\Profile.cshtml",
+              "RelativeToolTip": "Morshed.Web\\Views\\Account\\Profile.cshtml",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-30T04:40:53.461Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
+              "Title": "about.css",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\about.css",
+              "RelativeDocumentMoniker": "Morshed.Web\\wwwroot\\css\\about.css",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\about.css",
+              "RelativeToolTip": "Morshed.Web\\wwwroot\\css\\about.css",
+              "ViewState": "AgIAACEBAAAAAAAAAAAcwDIBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-30T18:27:02.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Models\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "Morshed.Web\\Models\\RegisterViewModel.cs",
@@ -196,7 +248,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Program.cs",
+              "RelativeDocumentMoniker": "Morshed.Web\\Program.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Program.cs",
+              "RelativeToolTip": "Morshed.Web\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T21:06:12.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "contact.css",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\contact.css",
+              "RelativeDocumentMoniker": "Morshed.Web\\wwwroot\\css\\contact.css",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\contact.css",
+              "RelativeToolTip": "Morshed.Web\\wwwroot\\css\\contact.css",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAowIsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-30T16:57:55.36Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Contact.cshtml",
               "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Views\\Home\\Contact.cshtml",
               "RelativeDocumentMoniker": "Morshed.Web\\Views\\Home\\Contact.cshtml",
@@ -208,7 +285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "SearchController.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Controllers\\SearchController.cs",
               "RelativeDocumentMoniker": "Morshed.Web\\Controllers\\SearchController.cs",
@@ -220,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "Provinces.css",
               "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\Provinces.css",
               "RelativeDocumentMoniker": "Morshed.Web\\wwwroot\\css\\Provinces.css",
@@ -232,7 +309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Views\\Province\\Details.cshtml",
               "RelativeDocumentMoniker": "Morshed.Web\\Views\\Province\\Details.cshtml",
@@ -244,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "user_dashboard.css",
               "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\user_dashboard.css",
               "RelativeDocumentMoniker": "Morshed.Web\\wwwroot\\css\\user_dashboard.css",
@@ -256,7 +333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "ManagePlaces.cshtml",
               "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Views\\Admin\\ManagePlaces.cshtml",
               "RelativeDocumentMoniker": "Morshed.Web\\Views\\Admin\\ManagePlaces.cshtml",
@@ -268,19 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Profile.cshtml",
-              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Views\\Account\\Profile.cshtml",
-              "RelativeDocumentMoniker": "Morshed.Web\\Views\\Account\\Profile.cshtml",
-              "ToolTip": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Views\\Account\\Profile.cshtml",
-              "RelativeToolTip": "Morshed.Web\\Views\\Account\\Profile.cshtml",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAIwI0AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-30T04:40:53.461Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "ProvinceController.cs",
               "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Controllers\\ProvinceController.cs",
               "RelativeDocumentMoniker": "Morshed.Web\\Controllers\\ProvinceController.cs",
@@ -292,7 +357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Views\\Place\\Details.cshtml",
               "RelativeDocumentMoniker": "Morshed.Web\\Views\\Place\\Details.cshtml",
@@ -304,19 +369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Program.cs",
-              "RelativeDocumentMoniker": "Morshed.Web\\Program.cs",
-              "ToolTip": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Program.cs",
-              "RelativeToolTip": "Morshed.Web\\Program.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAYwBYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T21:06:12.248Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "Morshed.Web.csproj",
               "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\Morshed.Web.csproj",
               "RelativeDocumentMoniker": "Morshed.Web\\Morshed.Web.csproj",
@@ -328,7 +381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\appsettings.json",
               "RelativeDocumentMoniker": "Morshed.Web\\appsettings.json",

@@ -237,3 +237,4 @@ C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\compressed\hwgpky7k8e-13
 C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\compressed\kv2t45j3r4-14rrksesyv.gz
 C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\compressed\gbdrz43xeb-o3huemxtt5.gz
+C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\compressed\rf7hfb51x5-xwtjb53bi6.gz
