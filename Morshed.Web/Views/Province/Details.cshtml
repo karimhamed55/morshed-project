@@ -1,47 +1,118 @@
-@model Morshed.Core.Entities.Province
-
+﻿@model Morshed.Core.Entities.Province
 @{
-    ViewData["Title"] = Model.NameEn;
+    Layout = null;
 }
 
-<div class="text-center mb-5">
-    <h1 class="display-4">@Model.NameEn <span class="text-muted">(@Model.NameAr)</span></h1>
-    <p class="lead">@Model.Description</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morshed - @Model.NameEn</title>
 
-<!-- Static Map Placeholder -->
-<div class="card mb-5 border-pharaonic">
-    <div class="card-body text-center bg-light">
-        <h3 class="card-title">Map of @Model.NameEn</h3>
-        <div style="height: 300px; background-color: #e9ecef; display: flex; align-items: center; justify-content: center; border: 1px dashed var(--gold);">
-            <p class="text-muted"><i class="fas fa-map-marked-alt fa-3x mb-3"></i><br>Static Google Map Image Here</p>
-        </div>
-    </div>
-</div>
+    <!-- Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css?v=1.2">
+    <link rel="stylesheet" href="~/css/provinces.css?v=4.0">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-<h2 class="mb-4 border-bottom border-warning pb-2">Top Places in @Model.NameEn</h2>
+    <div class="city-page-layout">
 
-<div class="row">
-    @foreach (var place in Model.Places)
-    {
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                @if (place.Images != null && place.Images.Any())
-                {
-                    <img src="@place.Images.First().Url" class="card-img-top" alt="@place.Name" style="height: 200px; object-fit: cover;">
-                }
-                else
-                {
-                    <img src="https://via.placeholder.com/300x200?text=No+Image" class="card-img-top" alt="No Image">
-                }
-                <div class="card-body">
-                    <h5 class="card-title">@place.Name</h5>
-                    <span class="badge bg-gold text-dark mb-2">@place.Category</span>
-                    <p class="card-text text-truncate">@place.Description</p>
-                    <p class="small text-muted"><i class="fas fa-map-marker-alt"></i> @place.Address</p>
-                    <a asp-controller="Place" asp-action="Details" asp-route-id="@place.Id" class="btn btn-sm btn-primary w-100">View Details</a>
+        <!-- 1. LEFT SIDEBAR (Dancing Script + Shadow) -->
+        <aside class="vertical-sidebar">
+            <div class="vertical-text-wrapper">
+                <h1 class="vertical-city-name">@Model.NameEn</h1>
+            </div>
+        </aside>
+
+        <!-- 2. MAIN CONTENT -->
+        <main class="main-content-area">
+
+            <!-- HERO IMAGE -->
+            <div class="city-hero">
+                <img src="~/images/@(Model.NameEn).jpg"
+                     alt="@Model.NameEn"
+                     class="img-fluid"
+                     style="width: 100%; height: 100%; object-fit: cover;"
+                     onerror="this.src='/images/default.jpg'">
+                <div class="hero-overlay">
+                    <a asp-controller="Province" asp-action="Index" class="btn-back-provinces">
+                        <i class="fas fa-arrow-left me-2"></i> Back to Provinces
+                    </a>
+                    <!-- Reey Font for Title -->
+                    <h2 class="hero-title">@Model.NameEn</h2>
+                    <p class="hero-subtitle">A Journey Through Time & Beauty</p>
                 </div>
             </div>
-        </div>
-    }
-</div>
+
+            <div class="content-wrapper">
+                <!-- OVERVIEW -->
+                <div class="content-card">
+                    <h3 class="details-title"><i class="fas fa-book-open"></i> Overview</h3>
+                    <p class="details-text">
+                        @Model.Description
+                        <br><br>
+                        Welcome to <strong>@Model.NameEn</strong>, one of Egypt's most captivating destinations. This city is a perfect blend of rich history, vibrant culture, and stunning natural landscapes. Whether you are here to explore ancient monuments, dive into the crystal-clear waters, or simply relax under the sun, @Model.NameEn offers an unforgettable experience for every traveler.
+                    </p>
+                </div>
+
+                <!-- TOP ATTRACTIONS (Small Badge Fixed) -->
+                @if (Model.Places != null && Model.Places.Any())
+                {
+                    <div class="content-card">
+                        <h3 class="details-title"><i class="fas fa-map-signs"></i> Top Attractions</h3>
+                        <div class="info-grid">
+                            @foreach (var place in Model.Places)
+                            {
+                                <div class="place-item">
+                                    <h5 class="fw-bold" style="color:var(--primary-dark); font-family:'Playfair Display'; font-size:1.6rem; margin-bottom:10px;">@place.Name</h5>
+
+                                    <!-- البادج الأصفر صغير على قد الكلام -->
+                                    <span class="badge rounded-pill bg-warning text-dark mb-3 px-3 py-2">@place.Category</span>
+
+                                    <p class="small text-muted mb-4" style="line-height:1.6;">
+                                        @place.Description
+                                        <br>
+                                        Visit this iconic landmark to witness the grandeur of Egyptian heritage. Perfect for photography.
+                                    </p>
+                                    <a asp-controller="Place" asp-action="Details" asp-route-id="@place.Id" class="text-decoration-none fw-bold" style="color:var(--turquoise); font-size:1rem; margin-top:auto;">
+                                        Explore Place <i class="fas fa-arrow-right ms-1"></i>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+
+                <!-- MAP SECTION (Working) -->
+                <div class="content-card">
+                    <h3 class="details-title"><i class="fas fa-map-marked-alt"></i> Location Map</h3>
+                    <div class="map-frame">
+                        <iframe width="100%"
+                                height="100%"
+                                frameborder="0"
+                                style="border:0"
+                                src="https://www.google.com/maps?q=@Model.NameEn,Egypt&output=embed"
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOTER (Short Version) -->
+            <footer style="font-family: 'Poppins', sans-serif; color:#eaf4f9; background-color:#0e1a24; padding: 20px 0;">
+                <div class="lowerparent" style="text-align:center; font-size:14px;">
+                    <p>Copyright © 2025 Morshed.com | Crafted with <i class="fa-solid fa-heart" style="color:var(--gold);"></i></p>
+                </div>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="~/js/bootstrap.min.js"></script>
+</body>
+</html>

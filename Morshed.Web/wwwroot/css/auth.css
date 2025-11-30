@@ -1,0 +1,290 @@
+﻿/* === Morshed Identity Colors === */
+:root {
+    --primary-dark: #0e1a24; /* كحلي */
+    --gold: #f5d67b; /* درجة الذهبي من الكود بتاعك */
+    --turquoise: #00b4d8; /* درجة اللبني من الكود بتاعك */
+    --white: #ffffff;
+    --text-main: #3a2e00;
+}
+
+/* === Fix for Full Page Layout === */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+/* ده الكود السحري: بيخلي المحتوى يتمدد لملء الشاشة بالكامل */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* ده بيخلي الـ container ياخد المساحة المتبقية بعد الهيدر والفوتر */
+    flex-grow: 1;
+    padding: 20px 15px;
+    background: linear-gradient(135deg, var(--primary-dark), #1a2f3f);
+    position: relative;
+}
+/* إزالة الـ min-height من هنا */
+
+
+.register-card {
+    background: var(--white);
+    padding: 35px 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px; /* عرض ملموم ومناسب */
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    background-clip: padding-box;
+    isolation: isolate;
+}
+
+    /* === الفريم المتدرج للكارت الكبير === */
+    .register-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 3px;
+        background: linear-gradient(135deg, var(--gold), var(--turquoise));
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    .register-card h2 {
+        color: var(--primary-dark);
+        margin-bottom: 5px;
+        /* غيرنا الخط هنا لـ Dancing Script زي ما طلبت */
+        font-family: 'Dancing Script', cursive;
+        font-weight: 700;
+        text-align: center;
+        font-size: 2.8rem; /* كبرناه شوية عشان يبان أوضح */
+    }
+
+    .register-card p {
+        color: #777;
+        margin-bottom: 25px;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.9rem;
+    }
+
+/* === Form Layout === */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.form-group {
+    flex: 1;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+label {
+    font-weight: 600;
+    color: var(--primary-dark);
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* === Inputs Styling with Gradient Border === */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px 15px;
+    /* خدعة الفريم المتدرج للـ Input */
+    border: 2px solid transparent; /* بنحجز مكان للفريم */
+    border-radius: 12px;
+    /* طبقتين للخلفية: واحدة بيضا للنص، وواحدة متدرجة للفريم */
+    background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, var(--gold), var(--turquoise));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    outline: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    color: #333;
+    /* ظل خفيف يبرز الفريم */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+    /* لما تدوس جوه الخانة */
+    input:focus, select:focus {
+        /* نغير الظل ونعمل حركة بسيطة */
+        box-shadow: 0 5px 15px rgba(1, 165, 198, 0.15);
+        transform: translateY(-2px);
+    }
+
+/* Gender Radio Buttons */
+.gender {
+    display: flex;
+    gap: 20px;
+    padding-top: 8px;
+}
+
+    .gender label {
+        margin: 0;
+        cursor: pointer;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #555;
+        font-size: 0.9rem;
+    }
+
+    .gender input[type="radio"] {
+        accent-color: var(--turquoise);
+        width: 16px;
+        height: 16px;
+        margin: 0;
+    }
+
+/* Password Toggle */
+.password-group {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 38px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #999;
+    transition: color 0.3s;
+}
+
+    .toggle-password:hover {
+        color: var(--turquoise);
+    }
+
+/* === The Magic Button === */
+.btn-submit {
+    width: 100%;
+    height: 45px; /* صغرناه سنة */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(90deg, #f9e07f 0%, #f5d67b 25%, #e8c15c 50%, #0096c7 75%, #00b4d8 100%);
+    background-size: 300% 100%;
+    background-position: left center;
+    border-radius: 30px;
+    color: #3a2e00;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.35);
+    overflow: hidden;
+    transition: color 0.5s ease;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+    .btn-submit:hover {
+        animation: seaWave 1s linear forwards;
+        color: #ffffff;
+    }
+
+    .btn-submit:active {
+        transform: scale(0.97);
+    }
+
+@keyframes seaWave {
+    0% {
+        background-position: left center;
+    }
+
+    100% {
+        background-position: right center;
+    }
+}
+
+/* Login Link */
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #bbb; /* لون فاتح عشان الخلفية الغامقة */
+}
+
+    .login-link a {
+        color: var(--turquoise);
+        text-decoration: none;
+        font-weight: 700;
+        transition: color 0.3s;
+    }
+
+        .login-link a:hover {
+            color: var(--gold);
+            text-decoration: underline;
+        }
+
+/* === Header Fonts Adjustment === */
+.header1 .list-inline-item a {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none;
+}
+
+/* =========================================
+   تعديلات خاصة لمحاذاة النافبار والهيدر (Desktop Only)
+   ========================================= */
+@media (min-width: 992px) {
+    /* 1. توسيط جملة "Official Site" */
+    .header1 .container {
+        position: relative;
+    }
+
+    .head-header {
+        position: absolute;
+        left: 42%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+    }
+
+    /* 2. توسيط لينكات النافبار (HOME, CONTACT) */
+    nav .container {
+        position: relative;
+    }
+
+    .navbar-nav {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* 3. (جديد) إجبار زرار اللوجين إنه يروح أقصى اليمين */
+    .navbar-collapse {
+        justify-content: flex-end; /* ده اللي هيرمي الزرار يمين */
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .register-card {
+        padding: 25px 20px;
+    }
+}

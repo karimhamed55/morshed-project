@@ -1,0 +1,161 @@
+@{
+    Layout = null;
+    ViewData["Title"] = "Settings";
+}
+@model Morshed.Web.Models.UserProfileViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morshed - Settings</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css?v=1.2">
+    <link rel="stylesheet" href="~/css/nav_buttons.css?v=1.2">
+    <!-- الملف الجديد -->
+    <link rel="stylesheet" href="~/css/user_dashboard.css?v=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER (نفس نافبار الموقع) -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo-left.png" width="65" height="65">
+                    <img src="~/images/Logo-right.png" width="140" height="35" class="mt-1">
+                </a>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="Profile">PROFILE</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#">SETTINGS</a></li>
+                    </ul>
+                    <!-- زرار الخروج -->
+                    <form asp-controller="Auth" asp-action="Logout" method="post">
+                        <button type="submit" class="btn-nav btn-signup">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO BANNER -->
+    <form asp-action="Settings" method="post" enctype="multipart/form-data">
+        <div class="dashboard-hero">
+            <div class="profile-info-wrapper">
+                <div class="profile-avatar">
+                    <img src="@(!string.IsNullOrEmpty(Model.ProfilePictureUrl) ? Model.ProfilePictureUrl : "https://via.placeholder.com/150x150/0e1a24/FFFFFF?text=User")" id="profileImg" alt="Profile" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;">
+                    <label for="photoInput" class="change-photo-btn"><i class="fas fa-camera"></i></label>
+                    <input asp-for="ProfileImage" type="file" id="photoInput" hidden accept="image/*">
+                </div>
+                <h1 class="profile-name">@Model.FullName</h1>
+                <p class="profile-title">@Model.Bio</p>
+                
+                @if (TempData["StatusMessage"] != null)
+                {
+                    <div class="alert alert-success mt-3">@TempData["StatusMessage"]</div>
+                }
+                <div asp-validation-summary="All" class="text-danger mt-2"></div>
+            </div>
+        </div>
+
+        <div class="dashboard-container">
+
+            <!-- INFO GRID (Editable) -->
+            <div class="info-grid">
+                <div class="dashboard-card">
+                    <div class="card-icon"><i class="fas fa-user"></i></div>
+                    <h3>First Name</h3>
+                    <input asp-for="FirstName" class="form-control" placeholder="First Name" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-icon"><i class="fas fa-user"></i></div>
+                    <h3>Last Name</h3>
+                    <input asp-for="LastName" class="form-control" placeholder="Last Name" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-icon"><i class="fas fa-globe"></i></div>
+                    <h3>Country</h3>
+                    <select asp-for="Country" class="form-control">
+                        <option value="">Select Country</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
+                        <option value="UAE">UAE</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                    </select>
+                    <span asp-validation-for="Country" class="text-danger"></span>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-icon"><i class="fas fa-venus-mars"></i></div>
+                    <h3>Gender</h3>
+                    <select asp-for="Gender" class="form-control">
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-icon"><i class="fas fa-birthday-cake"></i></div>
+                    <h3>Age</h3>
+                    <input asp-for="Age" class="form-control" type="number" min="1" max="120" />
+                    <span asp-validation-for="Age" class="text-danger"></span>
+                </div>
+                 <div class="dashboard-card" style="grid-column: span 2;">
+                    <div class="card-icon"><i class="fas fa-pen"></i></div>
+                    <h3>Bio</h3>
+                    <textarea asp-for="Bio" class="form-control" rows="2" placeholder="Tell us about yourself"></textarea>
+                    <span asp-validation-for="Bio" class="text-danger"></span>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-icon"><i class="fas fa-phone"></i></div>
+                    <h3>Phone Number</h3>
+                    <input asp-for="PhoneNumber" class="form-control" placeholder="Enter phone number" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+                
+                <!-- Read Only Stats -->
+                <div class="dashboard-card">
+                    <div class="card-icon"><i class="fas fa-envelope"></i></div>
+                    <h3>Email Address</h3>
+                    <p>@Model.Email</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-4 mb-5">
+                <button type="submit" class="btn btn-primary btn-lg px-5">Save Changes</button>
+            </div>
+
+        </div>
+    </form>
+
+    <!-- FOOTER -->
+    <footer style="font-family: 'Poppins', sans-serif; color:#eaf4f9; background-color:#0e1a24; padding-top:30px;">
+        <div class="lowerparent" style="text-align:center; padding:20px 0; font-size:14px;">
+            <p>Copyright © 2025 Morshed.com</p>
+        </div>
+    </footer>
+
+    <script src="~/js/bootstrap.min.js"></script>
+    <script>
+        // Photo Preview Script
+        document.getElementById('photoInput').addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) { document.getElementById('profileImg').src = e.target.result; }
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        });
+    </script>
+</body>
+</html>

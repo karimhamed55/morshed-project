@@ -1,35 +1,218 @@
 @model IEnumerable<Morshed.Core.Entities.Place>
 
 @{
-    ViewData["Title"] = "Search Results";
+    Layout = null;
 }
 
-<h1>Search Results</h1>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Results - Morshed</title>
 
-<form asp-action="Index" method="get" class="mb-4">
-    <div class="input-group">
-        <input type="text" name="query" class="form-control" placeholder="Search places..." value="@ViewBag.Query">
-        <button class="btn btn-primary" type="submit">Search</button>
-    </div>
-</form>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css" />
 
-@if (Model != null && Model.Any())
-{
-    <div class="list-group">
-        @foreach (var item in Model)
-        {
-            <a asp-controller="Place" asp-action="Details" asp-route-id="@item.Id" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">@item.Name</h5>
-                    <small>@item.Category</small>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+    <style>
+        /* === ??? ??????? ???? ??? ???? ?????? === */
+        :root {
+            --card-bg: #ffffff;
+            --radius: 20px;
+            --gold: #d8b459;
+            --turquoise: #01a5c6;
+        }
+
+        .cards-wrap {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 28px;
+            justify-items: center;
+            padding: 20px 0;
+        }
+
+        .cat-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 42px 20px;
+            width: 100%;
+            max-width: 260px;
+            position: relative;
+            text-align: center;
+            color: #3d2b1f;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+            background-clip: padding-box;
+            isolation: isolate;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+            .cat-card::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                border-radius: inherit;
+                padding: 2px;
+                background: linear-gradient(135deg, var(--gold), var(--turquoise));
+                -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+                opacity: 0;
+                transition: opacity 0.4s ease;
+                z-index: 1;
+            }
+
+            .cat-card:hover::before {
+                opacity: 1;
+            }
+
+            .cat-card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+                transition: 0.4s;
+            }
+
+        .icon-circle {
+            width: 82px;
+            height: 82px;
+            border-radius: 50%;
+            background: rgba(216,180,89,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 18px;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+            transition: all .3s ease;
+        }
+
+        .cat-card:hover .icon-circle {
+            transform: scale(1.05);
+            color: #01a5c6;
+            border-color: #01a5c6;
+            background: rgba(1, 165, 198, 0.12);
+            transition: 0.5s;
+        }
+
+        .cat-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #3d2b1f;
+            margin-bottom: 5px;
+        }
+
+        .cat-sub {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .card-link {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        .cat-card * {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body style="background-color: #fcfcfc;">
+
+    <header>
+        <div class="header1">
+            <div class="container d-flex justify-content-between align-items-center">
+                <ul class="list-inline mt-2 small">
+                    <ul class="contact-list">
+                        <li class="contact-item"><a href="tel:3393373434"><span class="contact-icon"><i class="fas fa-phone-alt"></i></span> +20 221 121 573</a></li>
+                        <li class="list-inline-item head-header"><a asp-controller="Home" asp-action="Index">The official site of Morshed</a></li>
+                    </ul>
+                </ul>
+                <ul class="list-inline mb-0 small d-flex align-items-center gap-2">
+                    <li class="list-inline-item"><a href="#">FAQ</a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo-left.png" width="65" height="65">
+                    <img src="~/images/Logo-right.png" width="140" height="35" class="mt-1">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#">SEARCH RESULTS</a></li>
+                    </ul>
+                    <a asp-controller="Account" asp-action="Register"><button class="btn btn btn-m">Signup</button></a>
+                    <a asp-controller="Account" asp-action="Login"><button class="btn btn2-head btn-m ms-3">Login</button></a>
                 </div>
-                <p class="mb-1">@item.Description</p>
-                <small>@item.Address</small>
-            </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container my-5" style="min-height: 500px;">
+        <div class="text-center mb-5">
+            <h5 style="font-family: 'Dancing Script', cursive; color: #01a5c6; font-size: 1.5rem;">Discover</h5>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700;">
+                Results for: @ViewBag.Query
+            </h2>
+            <div style="width: 60px; height: 3px; background-color: #01a5c6; margin: 20px auto;"></div>
+        </div>
+
+        @if (Model == null || !Model.Any())
+        {
+            <div class="text-center py-5">
+                <i class="fas fa-search fa-4x text-muted mb-3"></i>
+                <h3 class="text-muted">No places found matching "@ViewBag.Query"</h3>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-outline-info mt-3" style="border-radius: 50px;">Go Back</a>
+            </div>
+        }
+        else
+        {
+            <div class="cards-wrap">
+                @foreach (var item in Model)
+                {
+                    <div class="cat-card">
+                        <div class="icon-circle">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+
+                        <h3 class="cat-title">@item.Name</h3>
+
+                        <p class="cat-sub">
+                            @item.Category <br>
+                            <span style="color: #01a5c6; font-size: 0.8rem;">@item.Address</span>
+                        </p>
+
+                        <a asp-controller="Place" asp-action="Details" asp-route-id="@item.Id" class="card-link"></a>
+                    </div>
+                }
+            </div>
         }
     </div>
-}
-else if (ViewBag.Query != null)
-{
-    <div class="alert alert-info">No results found for "@ViewBag.Query".</div>
-}
+
+    <footer style="font-family: 'Poppins', sans-serif; color:#eaf4f9; background-color:#0e1a24; padding-top:30px;">
+        <div class="lowerparent" style="text-align:center; padding:20px 0; font-size:14px;">
+            <p>Copyright © 2025 Morshed.com</p>
+        </div>
+    </footer>
+
+    <script src="~/js/bootstrap.min.js"></script>
+</body>
+</html>

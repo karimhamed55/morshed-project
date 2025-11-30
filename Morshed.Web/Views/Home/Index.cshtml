@@ -1,46 +1,599 @@
-﻿@model IEnumerable<Morshed.Core.Entities.Province>
-
-@{
-    ViewData["Title"] = "Home";
+﻿@{
+    Layout = null;
 }
 
-<div class="jumbotron text-center bg-transparent mb-5">
-    <h1 class="display-3 text-gold" style="font-family: 'Cinzel', serif; text-shadow: 2px 2px 4px #000;">Welcome to Morshed</h1>
-    <p class="lead text-dark font-weight-bold">Your Ultimate Guide to Egypt's Ancient Wonders</p>
-    <a asp-controller="Province" asp-action="Index" class="btn btn-primary btn-lg mt-3">Start Your Journey</a>
-</div>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morshed - Home</title>
 
-<div class="row text-center mb-5">
-    <div class="col-md-4">
-        <i class="fas fa-landmark fa-4x text-gold mb-3"></i>
-        <h3>Historic Sites</h3>
-        <p>Explore thousands of years of history in Luxor, Aswan, and Cairo.</p>
-    </div>
-    <div class="col-md-4">
-        <i class="fas fa-umbrella-beach fa-4x text-blue mb-3"></i>
-        <h3>Relaxing Beaches</h3>
-        <p>Unwind in the pristine waters of Sharm El-Sheikh and Hurghada.</p>
-    </div>
-    <div class="col-md-4">
-        <i class="fas fa-map-marked-alt fa-4x text-gold mb-3"></i>
-        <h3>Custom Tours</h3>
-        <p>Plan your perfect itinerary with our easy-to-use tour builder.</p>
-    </div>
-</div>
+    <link rel="stylesheet" href="~/css/all.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css" />
 
-<h2 class="text-center mb-4">Featured Destinations</h2>
-<div class="row">
-    @foreach (var item in Model.Take(3))
-    {
-        <div class="col-md-4 mb-4">
-            <div class="card h-100 border-pharaonic">
-                <img src="@item.ThumbnailUrl" class="card-img-top" alt="@item.NameEn" style="height: 200px; object-fit: cover;">
-                <div class="card-body">
-                    <h5 class="card-title">@item.NameEn</h5>
-                    <p class="card-text text-truncate">@item.Description</p>
-                    <a asp-controller="Province" asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-primary">Discover</a>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Italianno&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header1">
+            <div class="container d-flex justify-content-between align-items-center">
+                <ul class="list-inline mt-2 small">
+                    <ul class="contact-list">
+                        <li class="contact-item">
+                            <a href="tel:3393373434">
+                                <span class="contact-icon"><i class="fas fa-phone-alt"></i></span>
+                                <span class="contact-text">+20 221 121 573</span>
+                            </a>
+                        </li>
+                        <li class="contact-item">
+                            <a href="mailto:info@Morshed.com">
+                                <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                                <span class="contact-text">info@visitegypt.com</span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item head-header">
+                            <a asp-controller="Home" asp-action="Index">The official site of Morshed</a>
+                        </li>
+                    </ul>
+                </ul>
+
+                <ul class="list-inline mb-0 small d-flex align-items-center gap-2">
+                    <li class="list-inline-item"><a asp-controller="Home" asp-action="Contact">FAQ</a></li>
+                    <li class="list-inline-item"><a href="facebook.com"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="instagram.com"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="x.com"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="linkedin.com"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    <li class="list-inline-item"><a href="youtube.com"><i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo-left.png" width="65" height="65" class="">
+                    <img src="~/images/Logo-right.png" width="140" height="35" class="mt-1">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                        <li class="nav-item itm1 "><a class="nav-link active" asp-controller="Home" asp-action="Index">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Province" asp-action="Index">PROVINCES</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">GOVERNMENTS</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="Province" asp-action="Details" asp-route-id="1">Sharm Elsheikh</a></li>
+                                <li><a class="dropdown-item" asp-controller="Province" asp-action="Details" asp-route-id="2">Luxor</a></li>
+                                <li><a class="dropdown-item" asp-controller="Province" asp-action="Details" asp-route-id="3">Alexandria</a></li>
+                                <li><a class="dropdown-item" asp-controller="Province" asp-action="Details" asp-route-id="4">Cairo</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Contact">CONTACT US</a></li>
+                    </ul>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        var displayName = User.Identity.Name.Split('@')[0];
+
+                        // Welcome Badge with Gold style
+                        <a asp-controller="Account" asp-action="Profile" class="btn-nav btn-login ms-3 text-decoration-none" style="background-color: #d8b459; border-color: #d8b459; color: #000;">
+                            Welcome, @displayName
+                        </a>
+
+                        // Logout Button with Gold style
+                        <form asp-controller="Auth" asp-action="Logout" method="post" class="d-inline">
+                            <button type="submit" class="btn-nav btn-login ms-3 text-decoration-none border-0" style="background-color: #d8b459; border-color: #d8b459; color: #000;">Logout</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <a asp-controller="Auth" asp-action="Register" class="btn-nav btn-signup ms-3 text-decoration-none">Signup</a>
+                        <a asp-controller="Auth" asp-action="Login" class="btn-nav btn-login ms-3 text-decoration-none">Login</a>
+                    }
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="hero-section video-bg">
+        <div class="video-container">
+            <video class="video-frame"
+                   src="~/videos/VideoMain-uncomp.mp4"
+                   title="Visit Egypt Intro"
+                   autoplay muted loop playsinline
+                   webkit-playsinline preload poster allowfullscreen></video>
+        </div>
+
+        <div class="overlay"></div>
+
+        <div class="hero-content my-5">
+            <div class="text-center">
+                <div class="subtitle fs-1">Visit Egypt</div>
+                <h2 class="main-title">Where Would You Like To Go?</h2>
+                <p class="description">Find the Most Beautiful & Historic Places Around Egypt</p>
+            </div>
+
+            <form class="search-form" asp-controller="Search" asp-action="Index" method="get">
+
+                <div class="search-item">
+                    <i class="fas fa-calendar-day"></i>
+                    <div class="text-group">
+                        <label>Date From</label>
+                        <input type="date" id="date_from" name="date_from" value="2025-10-17">
+                    </div>
+                </div>
+
+                <div class="search-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="text-group">
+                        <label>Start At</label>
+                        <select id="time_from" name="time_from">
+                            <option value="00:00">12:00 am</option>
+                            <option value="06:00">6:00 am</option>
+                            <option value="09:00">9:00 am</option>
+                            <option value="12:00">12:00 pm</option>
+                            <option value="15:00">3:00 pm</option>
+                            <option value="18:00">6:00 pm</option>
+                            <option value="21:00">9:00 pm</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="search-item">
+                    <i class="fas fa-user-friends"></i>
+                    <div class="text-group">
+                        <label>Guests</label>
+                        <input type="number" id="guests" name="guests" placeholder="0" min="1">
+                    </div>
+                </div>
+
+                <div class="search-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="text-group">
+                        <label>Location</label>
+                        <select id="location" name="query" style="border: none; width: 100%; background: transparent; outline: none; color: #555; font-weight: 500; cursor: pointer;">
+                            <option value="Cairo">Cairo</option>
+                            <option value="Luxor">Luxor</option>
+                            <option value="Aswan">Aswan</option>
+                            <option value="Alexandria">Alexandria</option>
+                            <option value="Sharm El-Sheikh">Sharm El-Sheikh</option>
+                            <option value="Hurghada">Hurghada</option>
+                            <option value="Dahab">Dahab</option>
+                            <option value="Siwa">Siwa</option>
+                            <option value="Giza">Giza</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="button" type="submit">
+                    <svg class="svgIcon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm50.7-186.9L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path></svg>
+                    Search
+                </button>
+            </form>
+        </div>
+    </main>
+    <!-- section 2-->
+    <section class="section2">
+        <section class="browse-section">
+            <div class="browse-container">
+                <h2 class="browse-title">Browse Categories</h2>
+                <p class="browse-sub">Explore by theme and find what inspires you most</p>
+
+                <div class="cards-wrap">
+
+                    <div class="cat-card">
+                        <div class="icon-circle"><i class="fa-solid fa-landmark"></i></div>
+                        <h3 class="cat-title">Ancient Egypt</h3>
+                        <a asp-controller="Search" asp-action="Index" class="card-link" style="position: absolute; inset: 0; z-index: 10;"></a>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="icon-circle"><i class="fa-solid fa-umbrella-beach"></i></div>
+                        <h3 class="cat-title">Beaches</h3>
+                        <a asp-controller="Search" asp-action="Index" class="card-link" style="position: absolute; inset: 0; z-index: 10;"></a>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="icon-circle"><i class="fa-solid fa-ship"></i></div>
+                        <h3 class="cat-title">Cruises</h3>
+                        <a asp-controller="Search" asp-action="Index" class="card-link" style="position: absolute; inset: 0; z-index: 10;"></a>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="icon-circle"><i class="fa-solid fa-mountain-sun"></i></div>
+                        <h3 class="cat-title">Oases & Deserts</h3>
+                        <a asp-controller="Search" asp-action="Index" class="card-link" style="position: absolute; inset: 0; z-index: 10;"></a>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="icon-circle"><i class="fa-solid fa-mosque"></i></div>
+                        <h3 class="cat-title">Islamic</h3>
+                        <a asp-controller="Search" asp-action="Index" class="card-link" style="position: absolute; inset: 0; z-index: 10;"></a>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="icon-circle"><i class="fa-solid fa-church"></i></div>
+                        <h3 class="cat-title">Coptic</h3>
+                        <a asp-controller="Search" asp-action="Index" class="card-link" style="position: absolute; inset: 0; z-index: 10;"></a>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="icon-circle"><i class="fa-solid fa-building-columns"></i></div>
+                        <h3 class="cat-title">Museums</h3>
+                        <a asp-controller="Search" asp-action="Index" class="card-link" style="position: absolute; inset: 0; z-index: 10;"></a>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="icon-circle"><i class="fa-solid fa-person-hiking"></i></div>
+                        <h3 class="cat-title">Outdoor Sports</h3>
+                        <a asp-controller="Search" asp-action="Index" class="card-link" style="position: absolute; inset: 0; z-index: 10;"></a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- ================= SECTION 3: EXCLUSIVE PACKAGES ================= -->
+    <section class="Exclusive_Packages_sec">
+        <h1 class="first_h1">Plan Your Trip</h1>
+        <h1>Exclusive Packages</h1>
+        <div class="card_collections">
+            <!-- Card 1 -->
+            <div class="card_sec" style="background-image:url('@Url.Content("~/images/pyramid_2.jpg")');">
+                <div class="Featured_icon"><p>Featured</p><i class="fa-regular fa-heart fav-icon" onclick="toggleHeart(this)"></i></div>
+                <div class="main_content">
+                    <div class="p_icons"><p>Pyramid's Pathway</p><div class="icons_div"><i class="fa-solid fa-camera"></i><i class="fa-solid fa-video"></i></div></div>
+                    <div class="div_price"><span>From</span><span>$400</span></div>
+                    <div class="Explore_div"><p>Explore</p><i class="arrow fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="card_sec" style="background-image:url('@Url.Content("~/images/luxer_1.jpg")');">
+                <div class="Featured_icon"><p>Featured</p><i class="fa-regular fa-heart fav-icon" onclick="toggleHeart(this)"></i></div>
+                <div class="main_content">
+                    <div class="p_icons"><p>Luxor Temple</p><div class="icons_div"><i class="fa-solid fa-camera"></i></div></div>
+                    <div class="div_price"><span>From</span><span>$350</span></div>
+                    <div class="Explore_div"><p>Explore</p><i class="arrow fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="card_sec" style="background-image:url('@Url.Content("~/images/sharm_1.jpg")');">
+                <div class="Featured_icon"><p>Featured</p><i class="fa-regular fa-heart fav-icon" onclick="toggleHeart(this)"></i></div>
+                <div class="main_content">
+                    <div class="p_icons"><p>Red Sea Diving</p><div class="icons_div"><i class="fa-solid fa-water"></i></div></div>
+                    <div class="div_price"><span>From</span><span>$500</span></div>
+                    <div class="Explore_div"><p>Explore</p><i class="arrow fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="card_sec" style="background-image:url('@Url.Content("~/images/sharm_2.jpg")');">
+                <div class="Featured_icon"><p>Featured</p><i class="fa-regular fa-heart fav-icon" onclick="toggleHeart(this)"></i></div>
+                <div class="main_content">
+                    <div class="p_icons"><p>Coral Reefs</p><div class="icons_div"><i class="fa-solid fa-camera"></i></div></div>
+                    <div class="div_price"><span>From</span><span>$450</span></div>
+                    <div class="Explore_div"><p>Explore</p><i class="arrow fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="card_sec" style="background-image:url('@Url.Content("~/images/luxer_2.jpg")');">
+                <div class="Featured_icon"><p>Featured</p><i class="fa-regular fa-heart fav-icon" onclick="toggleHeart(this)"></i></div>
+                <div class="main_content">
+                    <div class="p_icons"><p>Karnak Temple</p><div class="icons_div"><i class="fa-solid fa-video"></i></div></div>
+                    <div class="div_price"><span>From</span><span>$380</span></div>
+                    <div class="Explore_div"><p>Explore</p><i class="arrow fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="card_sec" style="background-image:url('@Url.Content("~/images/pyramid_2.jpg")');">
+                <div class="Featured_icon"><p>Featured</p><i class="fa-regular fa-heart fav-icon" onclick="toggleHeart(this)"></i></div>
+                <div class="main_content">
+                    <div class="p_icons"><p>Sphinx Wonder</p><div class="icons_div"><i class="fa-solid fa-camera"></i></div></div>
+                    <div class="div_price"><span>From</span><span>$420</span></div>
+                    <div class="Explore_div"><p>Explore</p><i class="arrow fa-solid fa-arrow-right"></i></div>
                 </div>
             </div>
         </div>
-    }
-</div>
+    </section>
+
+    <!-- ================= SECTION 4: GRID IMAGES ================= -->
+    <section class="grid_images_sec">
+        <h1 class="first_h1_sec2">Discover More</h1>
+        <h1>Top Destinations</h1>
+        <div class="group_1">
+            <div class="first_img" style="background-image: linear-gradient(#0000005e, #0000005e), url('@Url.Content("~/images/pyramid_2.jpg")');">
+                <p class="first_p">The Great <br> Pyramids</p>
+            </div>
+            <div class="sec_img" style="background-image: linear-gradient(#0000005e, #0000005e), url('@Url.Content("~/images/sharm_1.jpg")');">
+                <h3>Beaches</h3>
+                <p class="sec_p">Discover The Red Sea</p>
+            </div>
+            <div class="third_img" style="background-image: linear-gradient(#0000005e, #0000005e), url('@Url.Content("~/images/luxer_1.jpg")');">
+                <p class="third_p">Ancient Egypt</p>
+            </div>
+        </div>
+        <div class="group_2">
+            <div class="fourth_img" style="background-image: linear-gradient(#0000005e, #0000005e), url('@Url.Content("~/images/alex.jpg")');">
+                <h3>Visit</h3>
+                <p class="fourth_p">Alexandria</p>
+            </div>
+            <div class="fifth_img" style="background-image: linear-gradient(#0000005e, #0000005e), url('@Url.Content("~/images/luxer_2.jpg")');">
+                <h3>Tombs of</h3>
+                <p class="fifth_p">Luxor</p>
+            </div>
+            <div class="sixth_img" style="background-image: linear-gradient(#0000005e, #0000005e), url('@Url.Content("~/images/template_3.jpg")');">
+                <h3>Start Now</h3>
+                <a asp-controller="Province" asp-action="Index" class="text-decoration-none">
+                    <button style="cursor: pointer;">Explore More</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECTION 5: NEWS ================= -->
+    <section class="Visit_Egypt_News">
+        <h1 class="first_h1">Latest Updates</h1>
+        <h1>Visit Egypt News</h1>
+        <div class="group_cards">
+            <!-- News Card 1 -->
+            <div class="cards_collection_visit_egypt">
+                <img src="~/images/nile.jpg" alt="">
+                <div class="card_date"><p class="p1">02</p><p class="p2">SEP</p></div>
+                <div class="info_div">
+                    <div class="users_comment">
+                        <i class="fa-regular fa-circle-user"></i><span>Admin</span>
+                        <i class="fa-regular fa-comments ms-2"></i><span>0 Comments</span>
+                    </div>
+                    <p class="card_main_P">Siwa Oasis: The Ultimate Guide</p>
+                    <a href="https://www.quitandgotravel.com/2022/04/06/siwa-oasis-travel-guide-2022/" class="Read_more_div" style="text-decoration: none;">
+                        <p>READ MORE</p>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- News Card 2 -->
+            <div class="cards_collection_visit_egypt">
+                <img src="~/images/sec_3_card_2.jpg" alt="">
+                <div class="card_date"><p class="p1">10</p><p class="p2">OCT</p></div>
+                <div class="info_div">
+                    <div class="users_comment">
+                        <i class="fa-regular fa-circle-user"></i><span>Admin</span>
+                        <i class="fa-regular fa-comments ms-2"></i><span>5 Comments</span>
+                    </div>
+                    <p class="card_main_P">Top 10 Things to do in Cairo</p>
+                    <a href="https://talesfromthelens.com/best-things-to-do-in-cairo-egypt/" class="Read_more_div" style="text-decoration: none;">
+                        <p>READ MORE</p>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- News Card 3 -->
+            <div class="cards_collection_visit_egypt">
+                <img src="~/images/sec_3_card_3.jpg" alt="">
+                <div class="card_date"><p class="p1">15</p><p class="p2">DEC</p></div>
+                <div class="info_div">
+                    <div class="users_comment">
+                        <i class="fa-regular fa-circle-user"></i><span>Admin</span>
+                        <i class="fa-regular fa-comments ms-2"></i><span>3 Comments</span>
+                    </div>
+                    <p class="card_main_P">Best Time to Visit Aswan</p>
+                    <a href="https://www.insightguides.com/destinations/africa-middle-east/egypt/aswan/when-to-go" class="Read_more_div" style="text-decoration: none;">
+                        <p>READ MORE</p>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECTION 6: FEATURED TOURS (RESTORED MINI CARDS) ================= -->
+    <section class="mini_card_final">
+        <h1>Featured Tours</h1>
+        <div class="mini_cards_grid">
+
+            <!-- Card 1 -->
+            <div class="_1stCard">
+                <img src="~/images/mini_image_1.jpg" alt="">
+                <div class="place_info_price">
+                    <p>Discover Ancient Thebes</p>
+                    <div class="price"><p>From</p><p>$900</p></div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="_1stCard">
+                <img src="~/images/mini_image_2.jpg" alt="">
+                <div class="place_info_price">
+                    <p>Nile River Cruise</p>
+                    <div class="price"><p>From</p><p>$1200</p></div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="_1stCard">
+                <img src="~/images/mini_image_3.jpg" alt="">
+                <div class="place_info_price">
+                    <p>Cairo City Break</p>
+                    <div class="price"><p>From</p><p>$600</p></div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="_1stCard">
+                <img src="~/images/mini_image_4.jpg" alt="">
+                <div class="place_info_price">
+                    <p>Aswan Nubian Village</p>
+                    <div class="price"><p>From</p><p>$850</p></div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="_1stCard">
+                <img src="~/images/mini_image_5.jpg" alt="">
+                <div class="place_info_price">
+                    <p>Dahab Blue Hole</p>
+                    <div class="price"><p>From</p><p>$400</p></div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="_1stCard">
+                <img src="~/images/mini_image_6.jpg" alt="">
+                <div class="place_info_price">
+                    <p>White Desert Camping</p>
+                    <div class="price"><p>From</p><p>$700</p></div>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="_1stCard">
+                <img src="~/images/mini_image_7.jpg" alt="">
+                <div class="place_info_price">
+                    <p>Siwa Oasis Retreat</p>
+                    <div class="price"><p>From</p><p>$550</p></div>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="_1stCard">
+                <img src="~/images/alex.jpg" alt="">
+                <div class="place_info_price">
+                    <p>Alexandria Library</p>
+                    <div class="price"><p>From</p><p>$300</p></div>
+                </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="_1stCard">
+                <img src="~/images/mini_image_9.jpg" alt="">
+                <div class="place_info_price">
+                    <p>Khan El Khalili</p>
+                    <div class="price"><p>From</p><p>$150</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="font-family: 'Poppins', sans-serif; color:#eaf4f9; background-color:#0e1a24; padding-top:30px;">
+
+        <div class="uperparent" style="display:flex; flex-wrap:nowrap; justify-content:space-between; align-items:center; padding:30px 0; text-align:center;">
+            <div class="leftupper" style="flex:1; text-align:center;">
+                <h3 style="margin:0; font-size:20px; font-family:'Reey';">Beyond the Pyramids:</h3>
+                <h5 style="margin:5px 0 0 0; font-size:16px; font-family:'Dancing Script';">Experience the Heart of Egypt.</h5>
+            </div>
+            <div class="middleupper" style="flex:1; display:flex; gap:10px; justify-content:center; align-items:center;">
+                <input type="email" placeholder="Enter your email" style="padding:8px 12px; border-radius:5px; border:1px solid #ccc; font-size:14px;">
+                <button style="padding:8px 15px; border:none; border-radius:5px;color:white; cursor:pointer; font-size:14px;">Subscribe</button>
+            </div>
+            <div class="rightupper" style="flex:1; display:flex; gap:10px; justify-content:center; align-items:center; font-size:18px;">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+
+        <div class="midlleparent" style="padding:40px 0; border-top:1px solid #01a5c6; border-bottom:1px solid #01a5c6;">
+            <div class="parent-middleparent" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:25px; text-align:center; align-items:flex-start;">
+
+                <div class="leftmiddle" style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; min-width: 150px;">
+                    <img src="~/images/Logo.png" alt="Middlelogo" style="display:block; margin:0 auto; max-width:220px; height:auto;" class="imagefooter">
+                </div>
+
+                <div class="contactmiddle" style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; min-width: 150px;">
+                    <h3 style="margin-bottom:10px;">Contacts</h3>
+                    <ul style="list-style:none; padding:0; margin:0; line-height:1.8; font-size:14px;">
+                        <li>info@visitegypt.com</li>
+                        <li>+1 (339) 337-3434</li>
+                        <li>Cairo Office</li>
+                    </ul>
+                </div>
+
+                <div class="mid1middle" style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; min-width: 150px;">
+                    <h3 style="margin-bottom:10px;">Explore</h3>
+                    <ul style="list-style:none; padding:0; margin:0; line-height:1.8; font-size:14px;">
+                        <li><a asp-controller="Home" asp-action="About">About Us</a></li>
+                        <li><a asp-controller="Home" asp-action="Packages">Places To Go</a></li>
+                        <li><a asp-controller="Home" asp-action="Plan">Plan Your Visit</a></li>
+                    </ul>
+                </div>
+
+                <div class="mid2middle" style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; min-width: 150px;">
+                    <h3 style="margin-bottom:10px;">Information</h3>
+                    <ul style="list-style:none; padding:0; margin:0; line-height:1.8; font-size:14px;">
+                        <li><a asp-controller="Home" asp-action="Events">Events</a></li>
+                        <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="mid3middle" style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; min-width: 150px;">
+                    <h3 style="margin-bottom:10px;">Legal</h3>
+                    <ul style="list-style:none; padding:0; margin:0; line-height:1.8; font-size:14px;">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="mid4middle" style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; min-width: 150px;">
+                    <h3 style="margin-bottom:10px;">Partners</h3>
+                    <ul style="list-style:none; padding:0; margin:0; line-height:1.8; font-size:14px;">
+                        <li><a href="#">EgyptAir</a></li>
+                        <li><a href="#">Ministry of Tourism</a></li>
+                        <li><a href="#">UNESCO</a></li>
+                    </ul>
+                </div>
+
+                <div class="mid5middle" style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; min-width: 150px;">
+                    <h3 style="margin-bottom:10px;">Get App</h3>
+                    <div style="display:flex; gap:15px; margin-top:5px; justify-content:center;">
+                        <a href="#"><i class="fa-brands fa-apple fa-2x"></i></a>
+                        <a href="#"><i class="fa-brands fa-google-play fa-2x"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="lowerparent" style="text-align:center; padding:20px 0; font-size:14px;">
+            <p>Copyright © 2025 Morshed.com | Crafted with <i class="fa-solid fa-heart fa-beat"></i> from Our heart into yours</p>
+        </div>
+    </footer>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/script.js"></script>
+    <script>
+
+        function toggleHeart(element) {
+            if (element.classList.contains('fa-regular')) {
+                element.classList.remove('fa-regular');
+                element.classList.add('fa-solid');
+                element.style.color = '#F97316';
+            } else {
+                element.classList.remove('fa-solid');
+                element.classList.add('fa-regular');
+                element.style.color = 'var(--gold)';
+            }
+        }
+    </script>
+</body>
+</html>

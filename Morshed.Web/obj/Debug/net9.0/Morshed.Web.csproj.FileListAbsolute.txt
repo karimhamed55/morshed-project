@@ -224,4 +224,16 @@ C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\staticwebassets.pack.jso
 C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\Morshed..48BF485A.Up2Date
 C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\Morshed.Web.genruntimeconfig.cache
 C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\ref\Morshed.Web.dll
+C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\Morshed.Web.sourcelink.json
+C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\compressed\z9ojwqjwrb-3mu0h9tx89.gz
+C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\compressed\20ejx2fepb-wezvmne4h7.gz
+C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\compressed\kj3q8x11wz-i6ufqnjp46.gz
+C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\compressed\acw8ya5ibl-eaqclrubh5.gz
+C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\compressed\dhn3a53bmo-kondc5b9md.gz
+C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\compressed\br6nruijy2-hbjw3bymot.gz
+C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\compressed\ecpnwz9o7b-44lv17b6cb.gz
+C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\compressed\md1s8lgb7h-1liwycvj9c.gz
+C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\compressed\hwgpky7k8e-13mt0g37vz.gz
 C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\compressed\kv2t45j3r4-14rrksesyv.gz
+C:\Users\USER\Desktop\depi\Morshed.Web\obj\Debug\net9.0\compressed\gbdrz43xeb-o3huemxtt5.gz

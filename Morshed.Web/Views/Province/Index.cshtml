@@ -1,24 +1,108 @@
 @model IEnumerable<Morshed.Core.Entities.Province>
-
 @{
+    Layout = null;
     ViewData["Title"] = "Provinces";
 }
 
-<h1 class="text-center mb-5">Explore Egypt's Provinces</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morshed - Explore Egypt</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css?v=1.2">
+    <link rel="stylesheet" href="~/css/nav_buttons.css?v=1.2">
+    <link rel="stylesheet" href="~/css/provinces.css?v=4.0">
 
-<div class="row">
-    @foreach (var item in Model)
-    {
-        <div class="col-md-6 mb-4">
-            <div class="card h-100 border-pharaonic">
-                <img src="@item.ThumbnailUrl" class="card-img-top" alt="@item.NameEn" style="height: 250px; object-fit: cover;">
-                <div class="card-body text-center">
-                    <h2 class="card-title">@item.NameEn</h2>
-                    <h4 class="text-muted">@item.NameAr</h4>
-                    <p class="card-text">@item.Description</p>
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-lg">Explore @item.NameEn</a>
-                </div>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body style="height:fit-content">
+    <!-- HEADER -->
+    <header>
+        <div class="header1">
+            <div class="container d-flex justify-content-between align-items-center">
+                <ul class="list-inline mt-2 small contact-list">
+                    <li class="contact-item"><a href="#"><span class="contact-icon"><i class="fas fa-phone-alt"></i></span> +20 221 121 573</a></li>
+                    <li class="list-inline-item head-header"><a asp-controller="Home" asp-action="Index">The official site of Morshed</a></li>
+                </ul>
             </div>
         </div>
-    }
-</div>
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo-left.png" width="65" height="65">
+                    <img src="~/images/Logo-right.png" width="140" height="35" class="mt-1">
+                </a>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#">PROVINCES</a></li>
+                    </ul>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        var displayName = User.Identity.Name.Split('@')[0];
+
+                        // Welcome Badge with Gold style
+                        <a asp-controller="Account" asp-action="Profile" class="btn-nav btn-login ms-3 text-decoration-none" style="background-color: #d8b459; border-color: #d8b459; color: #000;">
+                            Welcome, @displayName
+                        </a>
+
+                        // Logout Button with Gold style
+                        <form asp-controller="Auth" asp-action="Logout" method="post" class="d-inline">
+                            <button type="submit" class="btn-nav btn-login ms-3 text-decoration-none border-0" style="background-color: #d8b459; border-color: #d8b459; color: #000;">Logout</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <a asp-controller="Auth" asp-action="Register" class="btn-nav btn-signup ms-3 text-decoration-none">Signup</a>
+                        <a asp-controller="Auth" asp-action="Login" class="btn-nav btn-login ms-3 text-decoration-none">Login</a>
+                    }
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTENT -->
+    <main>
+        <div class="provinces-header">
+            <h4 class="sub-title">Discover Egypt</h4>
+            <h1 class="main-title">Explore Our Provinces</h1>
+        </div>
+        <div class="container">
+            <div class="provinces-grid">
+                @foreach (var item in Model)
+                {
+                    <div class="province-card">
+                        <div class="card-img-wrap">
+                            <img src="~/images/@(item.NameEn).jpg"
+                                 alt="@item.NameEn"
+                                 onerror="this.src='/images/default_province.jpg'">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h2 class="card-title">@item.NameEn</h2>
+                                <p class="card-text">@item.Description</p>
+                            </div>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn-explore">
+                                Explore City <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER (Short) -->
+    <footer style="font-family: 'Poppins', sans-serif; color:#eaf4f9; background-color:#0e1a24; padding-top:30px;">
+        <div class="lowerparent" style="text-align:center; padding:20px 0; font-size:14px;">
+            <p>Copyright © 2025 Morshed.com | Crafted with <i class="fa-solid fa-heart fa-beat" style="color:var(--gold);"></i></p>
+        </div>
+    </footer>
+    <script src="~/js/bootstrap.min.js"></script>
+</body>
+</html>

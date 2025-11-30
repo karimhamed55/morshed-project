@@ -13,3 +13,4 @@ C:\Users\USER\Desktop\depi\Morshed.Infrastructure\obj\Debug\net9.0\Morshed.Infra
 C:\Users\USER\Desktop\depi\Morshed.Infrastructure\obj\Debug\net9.0\refint\Morshed.Infrastructure.dll
 C:\Users\USER\Desktop\depi\Morshed.Infrastructure\obj\Debug\net9.0\Morshed.Infrastructure.pdb
 C:\Users\USER\Desktop\depi\Morshed.Infrastructure\obj\Debug\net9.0\ref\Morshed.Infrastructure.dll
+C:\Users\USER\Desktop\depi\Morshed.Infrastructure\obj\Debug\net9.0\Morshed.Infrastructure.sourcelink.json

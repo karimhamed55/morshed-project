@@ -1,7 +1,9 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Morshed.Core.Interfaces;
+using Morshed.Core.Entities;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Morshed.Web.Controllers
 {
@@ -14,19 +16,24 @@ namespace Morshed.Web.Controllers
             _unitOfWork = unitOfWork;
         }
 
+        [HttpGet]
         public async Task<IActionResult> Index(string query)
         {
             if (string.IsNullOrWhiteSpace(query))
             {
-                return View(Enumerable.Empty<Morshed.Core.Entities.Place>());
+                return View(Enumerable.Empty<Place>());
             }
 
-            var places = await _unitOfWork.Places.FindAsync(p => 
-                p.Name.Contains(query) || 
+            // التعديل هنا: زودنا p.Address.Contains(query)
+            var places = await _unitOfWork.Places.FindAsync(p =>
+                p.Name.Contains(query) ||
                 p.Description.Contains(query) ||
-                p.Category.Contains(query));
+                p.Category.Contains(query) ||
+                p.Address.Contains(query) // <--- ده السطر اللي هيخلي Luxor تظهر
+            );
 
             ViewBag.Query = query;
+
             return View(places);
         }
     }

@@ -10,3 +10,4 @@ C:\Users\USER\Desktop\depi\Morshed.Core\obj\Debug\net9.0\Morshed.Core.dll
 C:\Users\USER\Desktop\depi\Morshed.Core\obj\Debug\net9.0\refint\Morshed.Core.dll
 C:\Users\USER\Desktop\depi\Morshed.Core\obj\Debug\net9.0\Morshed.Core.pdb
 C:\Users\USER\Desktop\depi\Morshed.Core\obj\Debug\net9.0\ref\Morshed.Core.dll
+C:\Users\USER\Desktop\depi\Morshed.Core\obj\Debug\net9.0\Morshed.Core.sourcelink.json

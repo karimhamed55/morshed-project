@@ -1,48 +1,136 @@
-@model Morshed.Web.Models.LoginViewModel
-
+﻿@model Morshed.Web.Models.LoginViewModel
 @{
-    ViewData["Title"] = "Log in";
+    Layout = null;
 }
 
-<h1>Log in</h1>
-<div class="row">
-    <div class="col-md-4">
-        <section>
-            <form id="account" method="post">
-                <h4>Use a local account to log in.</h4>
-                <hr />
-                <div asp-validation-summary="All" class="text-danger"></div>
-                <div class="mb-3">
-                    <label asp-for="Email" class="form-label"></label>
-                    <input asp-for="Email" class="form-control" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morshed - Sign In</title>
+
+    <!-- CSS Links (نفس ملفات الستايل الموحدة) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css?v=1.2">
+    <link rel="stylesheet" href="~/css/style.css?v=1.2">
+    <link rel="stylesheet" href="~/css/auth.css?v=1.2">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <div class="header1">
+            <div class="container d-flex justify-content-between align-items-center">
+                <ul class="list-inline mt-2 small contact-list">
+                    <li class="contact-item">
+                        <a href="tel:3393373434">
+                            <span class="contact-icon"><i class="fas fa-phone-alt"></i></span> +20 221 121 573
+                        </a>
+                    </li>
+                    <li class="list-inline-item head-header">
+                        <a asp-controller="Home" asp-action="Index">The official site of Morshed</a>
+                    </li>
+                </ul>
+                <ul class="list-inline mb-0 small d-flex align-items-center gap-2">
+                    <li class="list-inline-item"><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo-left.png" width="65" height="65">
+                    <img src="~/images/Logo-right.png" width="140" height="35" class="mt-1">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Contact">CONTACT US</a></li>
+                    </ul>
+
+                    <!-- الزراير (استخدمنا الكلاسات الجديدة) -->
+                    <a asp-controller="Auth" asp-action="Register" class="btn-nav btn-signup text-decoration-none ms-3">Signup</a>
                 </div>
-                <div class="mb-3">
-                    <label asp-for="Password" class="form-label"></label>
-                    <input asp-for="Password" class="form-control" />
-                    <span asp-validation-for="Password" class="text-danger"></span>
-                </div>
-                <div class="mb-3">
-                    <div class="checkbox">
-                        <label asp-for="RememberMe" class="form-label">
-                            <input class="form-check-input" asp-for="RememberMe" />
-                            @Html.DisplayNameFor(m => m.RememberMe)
-                        </label>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= LOGIN SECTION ================= -->
+    <section class="register-container">
+
+        <div class="register-card" style="max-width: 500px;">
+            <h2>Welcome Back</h2>
+            <p>Enter your details to continue your journey</p>
+
+            <form asp-action="Login" asp-controller="Auth" method="post">
+
+                <div asp-validation-summary="All" class="text-danger mb-4 small text-center"></div>
+
+                <!-- Email -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label asp-for="Email">Email Address</label>
+                        <input asp-for="Email" type="email" placeholder="example@mail.com" required>
+                        <span asp-validation-for="Email" class="text-danger small"></span>
                     </div>
                 </div>
-                <div class="mb-3">
-                    <button type="submit" class="btn btn-primary">Log in</button>
-                </div>
-                <div>
-                    <p>
-                        <a asp-action="Register">Register as a new user</a>
-                    </p>
-                </div>
-            </form>
-        </section>
-    </div>
-</div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+                <!-- Password -->
+                <div class="form-row">
+                    <div class="form-group password-group">
+                        <label asp-for="Password">Password</label>
+                        <input asp-for="Password" type="password" id="login-password" placeholder="******" required>
+                        <span class="toggle-password" onclick="togglePass('login-password')">
+                            <i class="fa-regular fa-eye"></i>
+                        </span>
+                        <span asp-validation-for="Password" class="text-danger small"></span>
+                    </div>
+                </div>
+
+                <!-- Options (Remember Me & Forgot Password) -->
+                <div class="d-flex justify-content-between align-items-center mb-4 mt-2">
+                    <div class="form-check d-flex align-items-center gap-2">
+                        <input asp-for="RememberMe" type="checkbox" id="rememberMe" style="width: 16px; height: 16px; accent-color: var(--turquoise);">
+                        <label for="rememberMe" style="margin:0; font-weight: normal; font-size: 0.9rem; color: #555; cursor: pointer;">Remember me</label>
+                    </div>
+                    <a asp-controller="Auth" asp-action="ForgotPassword" style="color: var(--turquoise); font-size: 0.9rem; text-decoration: none; font-weight: 600;">Lost password?</a>
+                </div>
+
+                <!-- Submit Button (الزرار السحري) -->
+                <button type="submit" class="btn-submit">LOGIN</button>
+
+                <p class="login-link">
+                    Don't have an account? <a asp-controller="Auth" asp-action="Register">Register Now</a>
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer style="font-family: 'Poppins', sans-serif; color:#eaf4f9; background-color:#0e1a24; padding: 20px 0; text-align: center;">
+        <p>Copyright © 2025 Morshed.com | Crafted with <i class="fa-solid fa-heart fa-beat" style="color:var(--gold);"></i></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="~/js/bootstrap.min.js"></script>
+    <script>
+        function togglePass(id) {
+            var x = document.getElementById(id);
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>

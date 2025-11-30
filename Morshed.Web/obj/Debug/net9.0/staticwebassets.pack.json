@@ -5,12 +5,228 @@
       "PackagePath": "staticwebassets\\Morshed.Web.94imatbpwf.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\Provinces.css",
+      "PackagePath": "staticwebassets\\css\\Provinces.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\all.css",
+      "PackagePath": "staticwebassets\\css\\all.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\auth.css",
+      "PackagePath": "staticwebassets\\css\\auth.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\contact.css",
+      "PackagePath": "staticwebassets\\css\\contact.css"
+    },
+    {
       "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\css\\user_dashboard.css",
+      "PackagePath": "staticwebassets\\css\\user_dashboard.css"
+    },
+    {
       "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\fonts\\reey\\Koen van der Bliek Reey.txt",
+      "PackagePath": "staticwebassets\\fonts\\reey\\Koen van der Bliek Reey.txt"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\fonts\\reey\\Reey-Regular.otf",
+      "PackagePath": "staticwebassets\\fonts\\reey\\Reey-Regular.otf"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\Alexandria.jpg",
+      "PackagePath": "staticwebassets\\images\\Alexandria.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\Aswan.jpg",
+      "PackagePath": "staticwebassets\\images\\Aswan.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\Cairo.jpg",
+      "PackagePath": "staticwebassets\\images\\Cairo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\Dahab.jpg",
+      "PackagePath": "staticwebassets\\images\\Dahab.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\Luxor.jpg",
+      "PackagePath": "staticwebassets\\images\\Luxor.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\Sharm El-Sheikh.jpg",
+      "PackagePath": "staticwebassets\\images\\Sharm El-Sheikh.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\Siwa.jpg",
+      "PackagePath": "staticwebassets\\images\\Siwa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\alex.jpg",
+      "PackagePath": "staticwebassets\\images\\alex.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\logo-left.png",
+      "PackagePath": "staticwebassets\\images\\logo-left.png"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\logo-right.png",
+      "PackagePath": "staticwebassets\\images\\logo-right.png"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\luxer_1.jpg",
+      "PackagePath": "staticwebassets\\images\\luxer_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\luxer_2.jpg",
+      "PackagePath": "staticwebassets\\images\\luxer_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\mini_image_1.jpg",
+      "PackagePath": "staticwebassets\\images\\mini_image_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\mini_image_10.jpg",
+      "PackagePath": "staticwebassets\\images\\mini_image_10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\mini_image_11.jpg",
+      "PackagePath": "staticwebassets\\images\\mini_image_11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\mini_image_12.jpg",
+      "PackagePath": "staticwebassets\\images\\mini_image_12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\mini_image_2.jpg",
+      "PackagePath": "staticwebassets\\images\\mini_image_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\mini_image_3.jpg",
+      "PackagePath": "staticwebassets\\images\\mini_image_3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\mini_image_4.jpg",
+      "PackagePath": "staticwebassets\\images\\mini_image_4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\mini_image_5.jpg",
+      "PackagePath": "staticwebassets\\images\\mini_image_5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\mini_image_6.jpg",
+      "PackagePath": "staticwebassets\\images\\mini_image_6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\mini_image_7.jpg",
+      "PackagePath": "staticwebassets\\images\\mini_image_7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\mini_image_8.jpg",
+      "PackagePath": "staticwebassets\\images\\mini_image_8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\mini_image_9.jpg",
+      "PackagePath": "staticwebassets\\images\\mini_image_9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\nile.jpg",
+      "PackagePath": "staticwebassets\\images\\nile.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\profiles\\66b4c855-4e6e-4ea4-acda-5d79a2af5ef0_ana-de-armas.webp",
+      "PackagePath": "staticwebassets\\images\\profiles\\66b4c855-4e6e-4ea4-acda-5d79a2af5ef0_ana-de-armas.webp"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\profiles\\dab79cf5-b15c-4242-bdbd-7ae85585d77b_photo_5852956121759419165_y.jpg",
+      "PackagePath": "staticwebassets\\images\\profiles\\dab79cf5-b15c-4242-bdbd-7ae85585d77b_photo_5852956121759419165_y.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\pyramid_2.jpg",
+      "PackagePath": "staticwebassets\\images\\pyramid_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\pyramid_3.jpg",
+      "PackagePath": "staticwebassets\\images\\pyramid_3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\pyramid_4.jpg",
+      "PackagePath": "staticwebassets\\images\\pyramid_4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\pyramids.jpg",
+      "PackagePath": "staticwebassets\\images\\pyramids.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\resorte_1.jpg",
+      "PackagePath": "staticwebassets\\images\\resorte_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\sec_3_card_1.jpg",
+      "PackagePath": "staticwebassets\\images\\sec_3_card_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\sec_3_card_2.jpg",
+      "PackagePath": "staticwebassets\\images\\sec_3_card_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\sec_3_card_3.jpg",
+      "PackagePath": "staticwebassets\\images\\sec_3_card_3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\sec_3_card_4.jpg",
+      "PackagePath": "staticwebassets\\images\\sec_3_card_4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\sec_3_card_5.jpg",
+      "PackagePath": "staticwebassets\\images\\sec_3_card_5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\sharm_1.jpg",
+      "PackagePath": "staticwebassets\\images\\sharm_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\sharm_2.jpg",
+      "PackagePath": "staticwebassets\\images\\sharm_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\template_1.jpg",
+      "PackagePath": "staticwebassets\\images\\template_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\template_2.jpg",
+      "PackagePath": "staticwebassets\\images\\template_2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\images\\template_3.jpg",
+      "PackagePath": "staticwebassets\\images\\template_3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\js\\script.js",
+      "PackagePath": "staticwebassets\\js\\script.js"
     },
     {
       "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\js\\site.js",
@@ -255,6 +471,42 @@
     {
       "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\videos\\VideoMain-uncomp.mp4",
+      "PackagePath": "staticwebassets\\videos\\VideoMain-uncomp.mp4"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\webfonts\\fa-v4compatibility.ttf",
+      "PackagePath": "staticwebassets\\webfonts\\fa-v4compatibility.ttf"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\depi\\Morshed.Web\\wwwroot\\webfonts\\fa-v4compatibility.woff2",
+      "PackagePath": "staticwebassets\\webfonts\\fa-v4compatibility.woff2"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.Morshed.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

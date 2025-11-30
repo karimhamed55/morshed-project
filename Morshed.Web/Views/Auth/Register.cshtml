@@ -1,37 +1,175 @@
-@model Morshed.Web.Models.RegisterViewModel
-
+﻿@model Morshed.Web.Models.RegisterViewModel
 @{
-    ViewData["Title"] = "Register";
+    Layout = null;
 }
 
-<h1>Register</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morshed - Create Account</title>
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Register">
-            <h4>Create a new account.</h4>
-            <hr />
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="mb-3">
-                <label asp-for="Email" class="form-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="mb-3">
-                <label asp-for="Password" class="form-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="mb-3">
-                <label asp-for="ConfirmPassword" class="form-label"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-primary">Register</button>
-        </form>
-    </div>
-</div>
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css"> <!-- الستايل العام -->
+    <link rel="stylesheet" href="~/css/auth.css">  <!-- ستايل صفحة التسجيل -->
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    <!-- ================= HEADER ================= -->
+    <header>
+        <div class="header1">
+            <div class="container d-flex justify-content-between align-items-center">
+                <ul class="list-inline mt-2 small contact-list">
+                    <li class="contact-item">
+                        <a href="tel:3393373434">
+                            <span class="contact-icon"><i class="fas fa-phone-alt"></i></span> +20 221 121 573
+                        </a>
+                    </li>
+                    <li class="list-inline-item head-header">
+                        <a asp-controller="Home" asp-action="Index">The official site of Morshed</a>
+                    </li>
+                </ul>
+
+                <ul class="list-inline mb-0 small d-flex align-items-center gap-2">
+                    <li class="list-inline-item"><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo-left.png" width="65" height="65">
+                    <img src="~/images/Logo-right.png" width="140" height="35" class="mt-1">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Contact">CONTACT US</a></li>
+                    </ul>
+                    <!-- زرار الدخول: بيشاور على صفحة اللوجين -->
+                    <a asp-controller="Auth" asp-action="Login" class="btn btn2-head btn-m ms-3 text-decoration-none">Login</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= REGISTER SECTION ================= -->
+    <section class="register-container">
+        <div class="register-card">
+            <h2>Create Your Account</h2>
+            <p>Join us to explore the beauty of Egypt</p>
+
+            <!-- الفورم بيبعت لكنترولر Auth -->
+            <form asp-action="Register" asp-controller="Auth" method="post">
+
+                <div asp-validation-summary="All" class="text-danger mb-3 small"></div>
+
+                <!-- Row 1: Names -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label asp-for="FirstName">First Name*</label>
+                        <input asp-for="FirstName" type="text" placeholder="Ahmed" required>
+                        <span asp-validation-for="FirstName" class="text-danger small"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LastName">Last Name*</label>
+                        <input asp-for="LastName" type="text" placeholder="Ali" required>
+                        <span asp-validation-for="LastName" class="text-danger small"></span>
+                    </div>
+                </div>
+
+                <!-- Row 2: Username & Email -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label asp-for="Username">Username*</label>
+                        <input asp-for="Username" type="text" placeholder="ahmed_ali" required>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email">Email*</label>
+                        <input asp-for="Email" type="email" placeholder="example@mail.com" required>
+                    </div>
+                </div>
+
+                <!-- Row 3: Password -->
+                <div class="form-row">
+                    <div class="form-group password-group">
+                        <label asp-for="Password">Password*</label>
+                        <input asp-for="Password" type="password" id="reg-password" required>
+                        <!-- زرار إظهار الباسورد -->
+                        <span class="toggle-password" onclick="togglePass('reg-password')">
+                            <i class="fa-regular fa-eye"></i>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ConfirmPassword">Confirm Password*</label>
+                        <input asp-for="ConfirmPassword" type="password" required>
+                    </div>
+                </div>
+
+                <!-- Row 4: Country & Gender -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label asp-for="Country">Country*</label>
+                        <select asp-for="Country" required>
+                            <option value="">Select Country</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="USA">USA</option>
+                            <option value="UK">UK</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Saudi Arabia">Saudi Arabia</option>
+                            <option value="UAE">UAE</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Gender">Gender*</label>
+                        <select asp-for="Gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-submit">Register Now</button>
+
+                <p class="login-link">
+                    Already have an account? <a asp-controller="Auth" asp-action="Login">Login here</a>
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer style="font-family: 'Poppins', sans-serif; color:#eaf4f9; background-color:#0e1a24; padding-top:30px;">
+        <div class="lowerparent" style="text-align:center; padding:20px 0; font-size:14px;">
+            <p>Copyright © 2025 Morshed.com | Crafted with <i class="fa-solid fa-heart fa-beat" style="color:var(--gold);"></i></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="~/js/bootstrap.min.js"></script>
+    <script>
+        // Password Toggle Script
+        function togglePass(id) {
+            var x = document.getElementById(id);
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>

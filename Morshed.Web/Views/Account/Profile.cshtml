@@ -1,0 +1,167 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "My Profile";
+}
+@model Morshed.Web.Models.UserProfileViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morshed - My Profile</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css?v=1.2">
+    <link rel="stylesheet" href="~/css/nav_buttons.css?v=1.2">
+    <!-- الملف الجديد -->
+    <link rel="stylesheet" href="~/css/user_dashboard.css?v=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER (نفس نافبار الموقع) -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo-left.png" width="65" height="65">
+                    <img src="~/images/Logo-right.png" width="140" height="35" class="mt-1">
+                </a>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#">PROFILE</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="Settings">SETTINGS</a></li>
+                    </ul>
+                    <!-- زرار الخروج -->
+                    <form asp-controller="Auth" asp-action="Logout" method="post">
+                        <button type="submit" class="btn-nav btn-signup">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO BANNER -->
+    <div class="dashboard-hero">
+        <div class="profile-info-wrapper">
+            <div class="profile-avatar">
+                <img src="@(!string.IsNullOrEmpty(Model.ProfilePictureUrl) ? Model.ProfilePictureUrl : "https://via.placeholder.com/150x150/0e1a24/FFFFFF?text=User")" id="profileImg" alt="Profile" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;">
+            </div>
+            <h1 class="profile-name">@Model.FullName</h1>
+            <p class="profile-title">@Model.Bio</p>
+            
+            @if (TempData["StatusMessage"] != null)
+            {
+                <div class="alert alert-success mt-3">@TempData["StatusMessage"]</div>
+            }
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+
+        <!-- INFO GRID (Read Only) -->
+        <div class="info-grid">
+            <div class="dashboard-card">
+                <div class="card-icon"><i class="fas fa-user"></i></div>
+                <h3>First Name</h3>
+                <p class="lead">@Model.FirstName</p>
+            </div>
+            <div class="dashboard-card">
+                <div class="card-icon"><i class="fas fa-user"></i></div>
+                <h3>Last Name</h3>
+                <p class="lead">@Model.LastName</p>
+            </div>
+            <div class="dashboard-card">
+                <div class="card-icon"><i class="fas fa-globe"></i></div>
+                <h3>Country</h3>
+                <p class="lead">@Model.Country</p>
+            </div>
+            <div class="dashboard-card">
+                <div class="card-icon"><i class="fas fa-venus-mars"></i></div>
+                <h3>Gender</h3>
+                <p class="lead">@Model.Gender</p>
+            </div>
+            <div class="dashboard-card">
+                <div class="card-icon"><i class="fas fa-birthday-cake"></i></div>
+                <h3>Age</h3>
+                <p class="lead">@Model.Age</p>
+            </div>
+             <div class="dashboard-card" style="grid-column: span 2;">
+                <div class="card-icon"><i class="fas fa-pen"></i></div>
+                <h3>Bio</h3>
+                <p class="lead">@Model.Bio</p>
+            </div>
+            
+            <!-- Read Only Stats -->
+            <div class="dashboard-card">
+                <div class="card-icon"><i class="fas fa-envelope"></i></div>
+                <h3>Email Address</h3>
+                <p>@Model.Email</p>
+            </div>
+            <div class="dashboard-card">
+                <div class="card-icon"><i class="fas fa-phone"></i></div>
+                <h3>Phone Number</h3>
+                <p>@Model.PhoneNumber</p>
+            </div>
+            <div class="dashboard-card">
+                <div class="card-icon"><i class="fas fa-heart"></i></div>
+                <h3>Saved Places</h3>
+                <p class="big-number">@Model.SavedPlacesCount</p>
+            </div>
+            <div class="dashboard-card">
+                <div class="card-icon"><i class="fas fa-map-marked-alt"></i></div>
+                <h3>Visited</h3>
+                <p class="big-number">@Model.VisitedPlacesCount</p>
+            </div>
+        </div>
+
+        <!-- SAVED PLACES -->
+        <div class="section-header">
+            <i class="fas fa-bookmark"></i>
+            <h2>Saved Destinations</h2>
+        </div>
+
+        <div class="places-grid">
+            <!-- Example Card 1 -->
+            <div class="saved-place-card">
+                <div class="saved-place-img">
+                    <img src="~/images/pyramid_2.jpg" alt="Giza">
+                    <button class="remove-btn" type="button"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="saved-place-content">
+                    <h3>Great Pyramids</h3>
+                    <p><i class="fas fa-map-marker-alt text-info"></i> Giza, Egypt</p>
+                    <div class="text-warning mt-2"><i class="fas fa-star"></i> 4.9</div>
+                </div>
+            </div>
+
+            <!-- Example Card 2 -->
+            <div class="saved-place-card">
+                <div class="saved-place-img">
+                    <img src="~/images/luxer_1.jpg" alt="Luxor">
+                    <button class="remove-btn" type="button"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="saved-place-content">
+                    <h3>Karnak Temple</h3>
+                    <p><i class="fas fa-map-marker-alt text-info"></i> Luxor, Egypt</p>
+                    <div class="text-warning mt-2"><i class="fas fa-star"></i> 4.8</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer style="font-family: 'Poppins', sans-serif; color:#eaf4f9; background-color:#0e1a24; padding-top:30px;">
+        <div class="lowerparent" style="text-align:center; padding:20px 0; font-size:14px;">
+            <p>Copyright © 2025 Morshed.com</p>
+        </div>
+    </footer>
+
+    <script src="~/js/bootstrap.min.js"></script>
+</body>
+</html>
