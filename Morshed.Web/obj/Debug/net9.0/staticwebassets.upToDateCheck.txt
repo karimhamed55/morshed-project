@@ -134,6 +134,8 @@ wwwroot\images\Siwa.jpg
 wwwroot\images\template_1.jpg
 wwwroot\images\template_2.jpg
 wwwroot\images\template_3.jpg
+wwwroot\images\Valley of the Kings (2).jpg
+wwwroot\images\Valley of the Kings.jpg
 wwwroot\js\bootstrap.min.js
 wwwroot\js\script.js
 wwwroot\js\site.js
