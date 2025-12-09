@@ -93,6 +93,7 @@ wwwroot\images\Alexandria.jpg
 wwwroot\images\Aswan.jpg
 wwwroot\images\Cairo.jpg
 wwwroot\images\Dahab.jpg
+wwwroot\images\Karnak Temple.jpg
 wwwroot\images\logo.png
 wwwroot\images\logo-left.png
 wwwroot\images\logo-right.png
@@ -111,6 +112,7 @@ wwwroot\images\mini_image_6.jpg
 wwwroot\images\mini_image_7.jpg
 wwwroot\images\mini_image_8.jpg
 wwwroot\images\mini_image_9.jpg
+wwwroot\images\Naama Bay.jpg
 wwwroot\images\nile.jpg
 wwwroot\images\profiles\40304d2f-f6e5-43bb-a62c-53aac66ff419_Aswan.jpg
 wwwroot\images\profiles\66b4c855-4e6e-4ea4-acda-5d79a2af5ef0_ana-de-armas.webp
