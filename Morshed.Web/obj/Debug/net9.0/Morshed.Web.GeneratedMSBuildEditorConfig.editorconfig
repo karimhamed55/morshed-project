@@ -17,133 +17,141 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Morshed.Web
 build_property.RootNamespace = Morshed.Web
-build_property.ProjectDir = C:\Users\USER\Desktop\depi\Morshed.Web\
+build_property.ProjectDir = C:\Users\youse\Source\Repos\morshed-project\Morshed.Web\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\USER\Desktop\depi\Morshed.Web
+build_property.MSBuildProjectDirectory = C:\Users\youse\Source\Repos\morshed-project\Morshed.Web
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Account/Profile.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Account/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Account/Settings.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Account/Settings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTZXR0aW5ncy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Admin/CreatePlace.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Admin/CreatePlace.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlUGxhY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Admin/CreateProvince.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Admin/CreateProvince.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlUHJvdmluY2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Admin/Dashboard.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Admin/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Admin/EditPlace.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Admin/EditPlace.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFBsYWNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Admin/ManagePlaces.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Admin/ManagePlaces.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlUGxhY2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Admin/ManageReviews.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Admin/ManageProvinces.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlUHJvdmluY2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Admin/ManageReviews.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlUmV2aWV3cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Admin/ManageRoles.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Admin/ManageRoles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlUm9sZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Auth/ForgotPassword.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Admin/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Auth/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Auth/ForgotPasswordConfirmation.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Auth/ForgotPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Auth/Login.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Auth/Register.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Auth/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Home/About.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Home/Contact.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Home/Index.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Home/Privacy.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Place/Details.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Place/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhY2VcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Province/Details.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Province/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmluY2VcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Province/Index.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Province/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmluY2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Search/Index.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Search/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VhcmNoXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Shared/Error.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Tour/Create.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Tour/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Tour/Details.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Tour/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Tour/Index.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/Tour/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91clxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/_ViewImports.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/_ViewStart.cshtml]
+[C:/Users/youse/Source/Repos/morshed-project/Morshed.Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/USER/Desktop/depi/Morshed.Web/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-0ugz5du2jj

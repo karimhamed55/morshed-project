@@ -1,20 +1,72 @@
-@model Morshed.Core.Entities.Province
+﻿@model Morshed.Core.Entities.Province
 
 @{
+    Layout = "_AdminLayout";
     ViewData["Title"] = "Add Province";
 }
 
-<div class="container mt-4">
-    <h2>Add New Province</h2>
-    <form asp-action="CreateProvince" method="post">
-        <div class="mb-3">
-            <label asp-for="NameEn" class="form-label">Province Name (English)</label>
-            <input asp-for="NameEn" class="form-control" required />
-            <span asp-validation-for="NameEn" class="text-danger"></span>
-        </div>
-        <div class="mt-4">
-            <button type="submit" class="btn btn-primary">Create</button>
-            <a asp-action="CreatePlace" class="btn btn-secondary ms-2">Cancel</a>
-        </div>
-    </form>
+<link rel="stylesheet" href="~/css/admin_create.css?v=2.0">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="admin-header">
+        <h2>Add New Province</h2>
+        <p>Expand our map with a new Egyptian destination</p>
+    </div>
+
+    <!-- The Form Card -->
+    <div class="form-card">
+        <form asp-action="CreateProvince" method="post" enctype="multipart/form-data">
+
+            <!-- English Name -->
+            <div class="mb-4">
+                <label asp-for="NameEn" class="form-label">Province Name (English)</label>
+                <input asp-for="NameEn" class="form-control" placeholder="e.g. Aswan" required />
+                <span asp-validation-for="NameEn" class="text-danger small"></span>
+            </div>
+
+            <!-- Arabic Name -->
+            <div class="mb-4">
+                <label asp-for="NameAr" class="form-label">Province Name (Arabic)</label>
+                <input asp-for="NameAr" class="form-control" placeholder="مثال: أسوان" dir="rtl" />
+                <span asp-validation-for="NameAr" class="text-danger small"></span>
+            </div>
+
+            <!-- Description -->
+            <div class="mb-4">
+                <label asp-for="Description" class="form-label">Description</label>
+                <textarea asp-for="Description" class="form-control" rows="4" placeholder="Write a brief description about this province..."></textarea>
+                <span asp-validation-for="Description" class="text-danger small"></span>
+            </div>
+
+            <!-- Image Upload (اختياري لو بتدعم رفع صور) -->
+            <div class="mb-4">
+                <label class="form-label">Thumbnail Image</label>
+                <input type="file" name="file" class="form-control" accept="image/*" />
+                <small class="form-text">Upload a cover image for the province card.</small>
+            </div>
+
+            <!-- Actions -->
+            <div class="form-actions">
+                <!-- رجوع لصفحة إضافة المكان (عشان هو جه منها) -->
+                <a asp-action="CreatePlace" class="btn-cancel">Cancel</a>
+
+                <button type="submit" class="btn-save">
+                    <i class="fas fa-plus-circle me-2"></i> Create Province
+                </button>
+            </div>
+
+        </form>
+    </div>
+
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

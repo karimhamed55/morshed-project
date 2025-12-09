@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Morshed.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c6c01ed70e9c65c9e7b4307d9206b45549b23f1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4495878b55c34de5cbd7fe8515b09eb2a6d0a906")]
 [assembly: System.Reflection.AssemblyProductAttribute("Morshed.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Morshed.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Morshed Admin</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/admin_dashboard.css?v=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="admin-wrapper">
+
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <img src="~/images/logo-left.png" width="50" alt="Logo">
+                <h3>Morshed Admin</h3>
+            </div>
+
+            <ul class="sidebar-menu">
+                <li>
+                    <a asp-controller="Admin" asp-action="Dashboard" class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                        <i class="fas fa-home"></i> <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Admin" asp-action="ManagePlaces" class="@(ViewContext.RouteData.Values["Action"].ToString() == "ManagePlaces" ? "active" : "")">
+                        <i class="fas fa-map-marked-alt"></i> <span>Places</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Admin" asp-action="ManageProvinces" class="@(ViewContext.RouteData.Values["Action"].ToString() == "CreateProvince" ? "active" : "")">
+                        <i class="fas fa-city"></i> <span>Provinces</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Admin" asp-action="ManageReviews" class="@(ViewContext.RouteData.Values["Action"].ToString() == "ManageReviews" ? "active" : "")">
+                        <i class="fas fa-comments"></i> <span>Reviews</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Admin" asp-action="Users" class="@(ViewContext.RouteData.Values["Action"].ToString() == "Users" ? "active" : "")">
+                        <i class="fas fa-users"></i> <span>Users</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <form asp-controller="Auth" asp-action="Logout" method="post">
+                    <button type="submit" class="btn-logout">
+                        <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
+                    </button>
+                </form>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <div class="admin-content">
+
+            <!-- Top Header -->
+            <div class="dashboard-header">
+                <div>
+                    <h1>@ViewData["Title"]</h1>
+                    <p class="text-muted mb-0">Welcome back, Admin!</p>
+                </div>
+
+                <div class="admin-user-info">
+                    <span class="fw-bold">@User.Identity?.Name</span>
+                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=0D8ABC&color=fff" alt="Admin">
+                </div>
+            </div>
+
+            <!-- Page Content Injection -->
+            @RenderBody()
+
+        </div>
+    </div>
+
+    <script src="~/js/bootstrap.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

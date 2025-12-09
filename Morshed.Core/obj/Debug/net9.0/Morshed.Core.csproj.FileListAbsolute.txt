@@ -11,3 +11,16 @@ C:\Users\USER\Desktop\depi\Morshed.Core\obj\Debug\net9.0\refint\Morshed.Core.dll
 C:\Users\USER\Desktop\depi\Morshed.Core\obj\Debug\net9.0\Morshed.Core.pdb
 C:\Users\USER\Desktop\depi\Morshed.Core\obj\Debug\net9.0\ref\Morshed.Core.dll
 C:\Users\USER\Desktop\depi\Morshed.Core\obj\Debug\net9.0\Morshed.Core.sourcelink.json
+C:\Users\youse\Source\Repos\morshed-project\Morshed.Core\bin\Debug\net9.0\Morshed.Core.deps.json
+C:\Users\youse\Source\Repos\morshed-project\Morshed.Core\bin\Debug\net9.0\Morshed.Core.dll
+C:\Users\youse\Source\Repos\morshed-project\Morshed.Core\bin\Debug\net9.0\Morshed.Core.pdb
+C:\Users\youse\Source\Repos\morshed-project\Morshed.Core\obj\Debug\net9.0\Morshed.Core.csproj.AssemblyReference.cache
+C:\Users\youse\Source\Repos\morshed-project\Morshed.Core\obj\Debug\net9.0\Morshed.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\youse\Source\Repos\morshed-project\Morshed.Core\obj\Debug\net9.0\Morshed.Core.AssemblyInfoInputs.cache
+C:\Users\youse\Source\Repos\morshed-project\Morshed.Core\obj\Debug\net9.0\Morshed.Core.AssemblyInfo.cs
+C:\Users\youse\Source\Repos\morshed-project\Morshed.Core\obj\Debug\net9.0\Morshed.Core.csproj.CoreCompileInputs.cache
+C:\Users\youse\Source\Repos\morshed-project\Morshed.Core\obj\Debug\net9.0\Morshed.Core.sourcelink.json
+C:\Users\youse\Source\Repos\morshed-project\Morshed.Core\obj\Debug\net9.0\Morshed.Core.dll
+C:\Users\youse\Source\Repos\morshed-project\Morshed.Core\obj\Debug\net9.0\refint\Morshed.Core.dll
+C:\Users\youse\Source\Repos\morshed-project\Morshed.Core\obj\Debug\net9.0\Morshed.Core.pdb
+C:\Users\youse\Source\Repos\morshed-project\Morshed.Core\obj\Debug\net9.0\ref\Morshed.Core.dll

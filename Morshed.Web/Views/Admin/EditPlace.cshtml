@@ -1,60 +1,90 @@
-@using Morshed.Core.Entities
+﻿@using Morshed.Core.Entities
 @model Place
 
 @{
+    Layout = "_AdminLayout"; 
     ViewData["Title"] = "Edit Place";
 }
 
-<div class="container" style="padding-bottom: 200px; padding-top: 20px;">
-    
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2>Edit Place: @Model.Name</h2>
-        <div>
-            <button type="submit" form="editForm" class="btn btn-primary">Save Changes</button>
-            <a asp-action="ManagePlaces" class="btn btn-secondary">Cancel</a>
-        </div>
+<link rel="stylesheet" href="~/css/admin_create.css?v=2.0">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="admin-header">
+        <h2>Edit Place</h2>
+        <p>Update details for <span style="color:var(--primary-dark); font-weight:700;">@Model.Name</span></p>
     </div>
 
-    <form asp-action="EditPlace" method="post" id="editForm">
-        <input type="hidden" asp-for="Id" />
-        
-        <div class="mb-3">
-            <label class="form-label">Location (Province/Governorate)</label>
-            <select asp-for="ProvinceId" class="form-select" asp-items="ViewBag.Provinces" required>
-                <option value="">-- Select Location --</option>
-            </select>
-            <span asp-validation-for="ProvinceId" class="text-danger"></span>
-        </div>
+    <!-- The Form Card -->
+    <div class="form-card">
+        <form asp-action="EditPlace" method="post" id="editForm">
+            <input type="hidden" asp-for="Id" />
 
-        <div class="mb-3">
-            <label class="form-label">Name</label>
-            <input asp-for="Name" class="form-control" required />
-        </div>
+            <!-- Province Select -->
+            <div class="mb-4">
+                <label class="form-label">Location (Province)</label>
+                <div class="custom-input-group">
+                    <select asp-for="ProvinceId" class="form-select" asp-items="ViewBag.Provinces" required>
+                        <option value="">-- Select Location --</option>
+                    </select>
+                    <span asp-validation-for="ProvinceId" class="text-danger small"></span>
 
-        <div class="mb-3">
-            <label class="form-label">Address</label>
-            <input asp-for="Address" class="form-control" required />
-        </div>
+                    <!-- زرار إضافة محافظة جديدة (موجود احتياطي) -->
+                    <a asp-action="CreateProvince" class="btn-add-new" title="Add New Province">
+                        <i class="fas fa-plus"></i> New Province
+                    </a>
+                </div>
+            </div>
 
-        <div class="mb-3">
-            <label class="form-label">Description</label>
-            <textarea asp-for="Description" class="form-control" rows="5"></textarea>
-        </div>
+            <!-- Name -->
+            <div class="mb-4">
+                <label class="form-label">Place Name</label>
+                <input asp-for="Name" class="form-control" placeholder="e.g. Karnak Temple" required />
+                <span asp-validation-for="Name" class="text-danger small"></span>
+            </div>
 
+            <!-- Address -->
+            <div class="mb-4">
+                <label class="form-label">Address</label>
+                <input asp-for="Address" class="form-control" placeholder="e.g. Luxor, East Bank" required />
+                <span asp-validation-for="Address" class="text-danger small"></span>
+            </div>
 
+            <!-- Category -->
+            <div class="mb-4">
+                <label class="form-label">Category</label>
+                <input asp-for="Category" class="form-control" placeholder="e.g. Temple, Museum, Nature" />
+                <small class="form-text">Choose a category that best describes this place.</small>
+                <span asp-validation-for="Category" class="text-danger small"></span>
+            </div>
 
-        <div class="mb-3">
-            <label class="form-label">Category</label>
-            <input asp-for="Category" class="form-control" />
-        </div>
+            <!-- Description -->
+            <div class="mb-4">
+                <label class="form-label">Description</label>
+                <textarea asp-for="Description" class="form-control" rows="5" placeholder="Update the description..."></textarea>
+                <span asp-validation-for="Description" class="text-danger small"></span>
+            </div>
 
+            <!-- Actions -->
+            <div class="form-actions">
+                <a asp-action="ManagePlaces" class="btn-cancel">Cancel</a>
 
+                <button type="submit" class="btn-save">
+                    <i class="fas fa-save me-2"></i> Save Changes
+                </button>
+            </div>
 
-        <hr class="my-4" />
+        </form>
+    </div>
 
-        <div style="margin-top: 50px; margin-bottom: 100px;">
-            <button type="submit" class="btn btn-primary btn-lg">Save Changes</button>
-            <a asp-action="ManagePlaces" class="btn btn-secondary btn-lg ms-2">Cancel</a>
-        </div>
-    </form>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

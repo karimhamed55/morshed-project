@@ -1,28 +1,60 @@
 @{
-    ViewData["Title"] = "Admin Dashboard";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Overview";
 }
 
-<h1>Admin Dashboard</h1>
-<div class="row mt-4">
-    <div class="col-md-6">
-        <div class="card text-white bg-primary mb-3">
-            <div class="card-header">Places Management</div>
-            <div class="card-body">
-                <h5 class="card-title">Manage Tourist Sites</h5>
-                <p class="card-text">Add, edit, or remove places from the database.</p>
-                <a asp-action="ManagePlaces" class="btn btn-light">Go to Places</a>
-                <a asp-action="CreatePlace" class="btn btn-success mt-2">Add New Place</a>
+<div class="dashboard-grid">
+
+    <!-- Card 1: Places -->
+    <div class="admin-card">
+        <div>
+            <div class="card-icon-wrapper icon-blue">
+                <i class="fas fa-map-marked-alt"></i>
             </div>
+            <h3>Places Management</h3>
+            <p>Add, edit, or remove tourist attractions. Manage descriptions, locations, and categories.</p>
+        </div>
+        <div class="mt-3">
+            <a asp-action="ManagePlaces" class="btn-action btn-primary-action">Manage Places</a>
+            <a asp-action="CreatePlace" class="btn-action btn-secondary-action"><i class="fas fa-plus"></i> Add New</a>
         </div>
     </div>
-    <div class="col-md-6">
-        <div class="card text-white bg-warning mb-3">
-            <div class="card-header">Reviews Management</div>
-            <div class="card-body">
-                <h5 class="card-title">Moderation</h5>
-                <p class="card-text">Review and moderate user comments.</p>
-                <a asp-action="ManageReviews" class="btn btn-light">Go to Reviews</a>
+
+    <!-- Card 2: Provinces -->
+    <div class="admin-card">
+        <div>
+            <div class="card-icon-wrapper icon-gold">
+                <i class="fas fa-city"></i>
             </div>
+            <h3>Provinces</h3>
+            <p>Manage Egyptian governorates and their main data to categorize places effectively.</p>
         </div>
+        <div class="mt-3">
+            <a asp-action="ManageProvinces" class="btn-action btn-primary-action">Manage Provs</a>
+            <a asp-action="CreateProvince" class="btn-action btn-secondary-action"><i class="fas fa-plus"></i> Add New</a>
+        </div>
+    </div>
+
+    <!-- Card 3: Reviews -->
+    <div class="admin-card">
+        <div>
+            <div class="card-icon-wrapper icon-purple">
+                <i class="fas fa-comments"></i>
+            </div>
+            <h3>Reviews & Moderation</h3>
+            <p>Monitor user feedback, approve helpful reviews, and remove inappropriate content.</p>
+        </div>
+        <div class="mt-3">
+            <a asp-action="ManageReviews" class="btn-action btn-primary-action">View Reviews</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- Recent Activity Section (Optional Placeholder) -->
+<div class="mt-5">
+    <h3 style="font-family:'Playfair Display'; color:var(--primary-dark); margin-bottom:20px;">Recent Activity</h3>
+    <div class="bg-white p-4 rounded-4 shadow-sm border">
+        <p class="text-muted text-center py-4">No recent activity to show.</p>
     </div>
 </div>

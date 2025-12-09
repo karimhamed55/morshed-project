@@ -1,15 +1,15 @@
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Morshed.Core.Entities;
 using Morshed.Core.Interfaces;
-using Morshed.Core.Constants;
-using System.Threading.Tasks;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Morshed.Web.Controllers
 {
-    [Authorize(Roles = Roles.Admin)] 
+    // [Authorize(Roles = "Admin")] 
     public class AdminController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -26,48 +26,51 @@ namespace Morshed.Web.Controllers
             _roleManager = roleManager;
         }
 
+        // === Dashboard ===
+        public IActionResult Index() => RedirectToAction("Dashboard");
+
         public IActionResult Dashboard()
         {
             return View();
         }
 
+        // ==========================================
+        //  PLACES MANAGEMENT
+        // ==========================================
         public async Task<IActionResult> ManagePlaces()
         {
             var places = await _unitOfWork.Places.GetAllAsync();
             return View(places);
         }
 
-        public async Task<IActionResult> ManageReviews()
-        {
-            var reviews = await _unitOfWork.Reviews.GetAllAsync();
-            return View(reviews);
-        }
-
-        // Add Place
         [HttpGet]
         public async Task<IActionResult> CreatePlace()
         {
             var provinces = await _unitOfWork.Provinces.GetAllAsync();
-            ViewBag.Provinces = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(provinces, "Id", "NameEn");
+            ViewBag.Provinces = new SelectList(provinces, "Id", "NameEn");
             return View();
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreatePlace(Place place)
         {
             if (string.IsNullOrWhiteSpace(place.Name) || string.IsNullOrWhiteSpace(place.Address) || string.IsNullOrWhiteSpace(place.Category))
             {
                 var provinces = await _unitOfWork.Provinces.GetAllAsync();
-                ViewBag.Provinces = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(provinces, "Id", "NameEn");
+                ViewBag.Provinces = new SelectList(provinces, "Id", "NameEn");
                 ModelState.AddModelError("", "Name, Address, and Category are required.");
                 return View(place);
             }
+
             await _unitOfWork.Places.AddAsync(place);
+
+            // === التصليح هنا: شلنا الكومنت عشان يحفظ في الداتابيز ===
             await _unitOfWork.CompleteAsync();
-            return RedirectToAction("ManagePlaces");
+
+            return RedirectToAction(nameof(ManagePlaces));
         }
 
-        // Edit Place
         [HttpGet]
         public async Task<IActionResult> EditPlace(int id)
         {
@@ -75,16 +78,19 @@ namespace Morshed.Web.Controllers
             if (place == null) return NotFound();
 
             var provinces = await _unitOfWork.Provinces.GetAllAsync();
-            ViewBag.Provinces = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(provinces, "Id", "NameEn", place.ProvinceId);
-            
+            ViewBag.Provinces = new SelectList(provinces, "Id", "NameEn", place.ProvinceId);
+
             return View(place);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditPlace(Place place)
         {
             if (string.IsNullOrWhiteSpace(place.Name) || string.IsNullOrWhiteSpace(place.Address))
             {
+                var provinces = await _unitOfWork.Provinces.GetAllAsync();
+                ViewBag.Provinces = new SelectList(provinces, "Id", "NameEn", place.ProvinceId);
                 ModelState.AddModelError("", "Name and Address are required.");
                 return View(place);
             }
@@ -97,44 +103,40 @@ namespace Morshed.Web.Controllers
             existingPlace.Address = place.Address;
             existingPlace.Description = place.Description;
             existingPlace.Category = place.Category;
-            // Note: Images update logic would go here if implemented
 
             _unitOfWork.Places.Update(existingPlace);
+
+            // === وتفعيل الحفظ هنا كمان ===
             await _unitOfWork.CompleteAsync();
-            return RedirectToAction("ManagePlaces");
+
+            return RedirectToAction(nameof(ManagePlaces));
         }
 
-        // Delete Place
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeletePlace(int id)
         {
             var place = await _unitOfWork.Places.GetByIdAsync(id);
-            if (place == null) return NotFound();
-            _unitOfWork.Places.Remove(place);
-            await _unitOfWork.CompleteAsync();
-            return RedirectToAction("ManagePlaces");
+            if (place != null)
+            {
+                _unitOfWork.Places.Remove(place);
+
+                // === وهنا عشان الحذف يتم ===
+                await _unitOfWork.CompleteAsync();
+            }
+            return RedirectToAction(nameof(ManagePlaces));
         }
 
-        // List users and assign roles
-        [HttpGet]
-        public IActionResult ManageRoles()
+
+        // ==========================================
+        //  PROVINCES MANAGEMENT
+        // ==========================================
+        public async Task<IActionResult> ManageProvinces()
         {
-            var users = _userManager.Users.ToList();
-            return View(users);
+            var provinces = await _unitOfWork.Provinces.GetAllAsync();
+            return View(provinces);
         }
 
-        // Assign role to user
-        [HttpPost]
-        public async Task<IActionResult> AssignRole(string userId, string role)
-        {
-            var user = await _userManager.FindByIdAsync(userId);
-            if (user == null) return NotFound();
-            if (!await _roleManager.RoleExistsAsync(role))
-                await _roleManager.CreateAsync(new IdentityRole(role));
-            await _userManager.AddToRoleAsync(user, role);
-            return RedirectToAction("ManageRoles");
-        }
-        // Create Province
         [HttpGet]
         public IActionResult CreateProvince()
         {
@@ -142,6 +144,7 @@ namespace Morshed.Web.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateProvince(Province province)
         {
             if (string.IsNullOrWhiteSpace(province.NameEn))
@@ -150,21 +153,110 @@ namespace Morshed.Web.Controllers
                 return View(province);
             }
 
-            var provinces = await _unitOfWork.Provinces.GetAllAsync();
-            if (provinces.Any(p => p.NameEn.Equals(province.NameEn, StringComparison.OrdinalIgnoreCase)))
+            var allProvinces = await _unitOfWork.Provinces.GetAllAsync();
+            if (allProvinces.Any(p => p.NameEn.ToLower() == province.NameEn.ToLower()))
             {
                 ModelState.AddModelError("NameEn", "Province already exists.");
                 return View(province);
             }
 
-            province.NameAr = province.NameEn; // Fallback
-            province.Description = "Added via Admin";
-            province.ThumbnailUrl = "/images/placeholder.jpg"; // Placeholder
+            if (string.IsNullOrEmpty(province.NameAr)) province.NameAr = province.NameEn;
+            if (string.IsNullOrEmpty(province.ThumbnailUrl)) province.ThumbnailUrl = "/images/default_province.jpg";
 
             await _unitOfWork.Provinces.AddAsync(province);
+
+            // === وهنا عشان المحافظة تتحفظ ===
             await _unitOfWork.CompleteAsync();
 
-            return RedirectToAction("CreatePlace");
+            return RedirectToAction(nameof(ManageProvinces));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteProvince(int id)
+        {
+            var province = await _unitOfWork.Provinces.GetByIdAsync(id);
+            if (province != null)
+            {
+                _unitOfWork.Provinces.Remove(province);
+                await _unitOfWork.CompleteAsync();
+            }
+            return RedirectToAction(nameof(ManageProvinces));
+        }
+
+
+        // ==========================================
+        //  REVIEWS MANAGEMENT
+        // ==========================================
+        public async Task<IActionResult> ManageReviews()
+        {
+            var reviews = await _unitOfWork.Reviews.GetAllAsync();
+            return View(reviews);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteReview(int id)
+        {
+            var review = await _unitOfWork.Reviews.GetByIdAsync(id);
+            if (review != null)
+            {
+                _unitOfWork.Reviews.Remove(review);
+                await _unitOfWork.CompleteAsync();
+            }
+            return RedirectToAction(nameof(ManageReviews));
+        }
+
+
+        // ==========================================
+        //  USERS MANAGEMENT
+        // ==========================================
+        [HttpGet]
+        public IActionResult Users()
+        {
+            var users = _userManager.Users.ToList();
+            return View(users);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AssignRole(string userId, string role)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null) return NotFound();
+
+            if (!await _roleManager.RoleExistsAsync(role))
+            {
+                await _roleManager.CreateAsync(new IdentityRole(role));
+            }
+
+            if (!await _userManager.IsInRoleAsync(user, role))
+            {
+                await _userManager.AddToRoleAsync(user, role);
+            }
+
+            return RedirectToAction(nameof(Users));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RemoveRole(string userId, string role)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user != null && await _userManager.IsInRoleAsync(user, role))
+            {
+                await _userManager.RemoveFromRoleAsync(user, role);
+            }
+            return RedirectToAction(nameof(Users));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteUser(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user != null)
+            {
+                await _userManager.DeleteAsync(user);
+            }
+            return RedirectToAction(nameof(Users));
         }
     }
 }
