@@ -1,0 +1,71 @@
+﻿@model Morshed.Core.Entities.Province
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Edit Province";
+}
+
+<!-- ربط الستايل الموحد -->
+<link rel="stylesheet" href="~/css/admin_create.css?v=4.0">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="admin-header">
+        <h2>Edit Province</h2>
+        <p>Update details for <span style="color:var(--gold); font-weight:700;">@Model.NameEn</span></p>
+    </div>
+
+    <!-- The Form Card -->
+    <div class="form-card">
+        <form asp-action="EditProvince" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+
+            <!-- English Name -->
+            <div class="mb-4">
+                <label asp-for="NameEn" class="form-label">Province Name (English)</label>
+                <input asp-for="NameEn" class="form-control" required />
+                <span asp-validation-for="NameEn" class="text-danger small"></span>
+            </div>
+
+            <!-- Arabic Name -->
+            <div class="mb-4">
+                <label asp-for="NameAr" class="form-label">Province Name (Arabic)</label>
+                <input asp-for="NameAr" class="form-control" dir="rtl" />
+                <span asp-validation-for="NameAr" class="text-danger small"></span>
+            </div>
+
+            <!-- Description -->
+            <div class="mb-4">
+                <label asp-for="Description" class="form-label">Description</label>
+                <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                <span asp-validation-for="Description" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label">Update Image</label>
+                <input type="file" name="file" class="form-control" accept="image/*" />
+                <small class="form-text text-muted">Upload a new image to replace the current one.</small>
+            </div>
+
+            <!-- Actions -->
+            <div class="form-actions">
+                <a asp-action="ManageProvinces" class="btn-cancel">Cancel</a>
+
+                <button type="submit" class="btn-save">
+                    <i class="fas fa-save me-2"></i> Save Changes
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

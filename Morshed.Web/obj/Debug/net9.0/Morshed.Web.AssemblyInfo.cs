@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Morshed.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6853c41d21ef00015e326efb2969a449e603a2cf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae288cfecee6c2c34ffb7daf3a4212e8c820f59d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Morshed.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Morshed.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -4,12 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Morshed.Core.Entities;
 using Morshed.Core.Interfaces;
+using Morshed.Core.Constants; // لو عندك كلاس للثوابت
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Morshed.Web.Controllers
 {
-    // [Authorize(Roles = "Admin")] 
+    // [Authorize(Roles = "Admin")] // فعل السطر ده لما تخلص عشان تحمي لوحة التحكم
     public class AdminController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -55,19 +56,16 @@ namespace Morshed.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreatePlace(Place place)
         {
-            if (string.IsNullOrWhiteSpace(place.Name) || string.IsNullOrWhiteSpace(place.Address) || string.IsNullOrWhiteSpace(place.Category))
+            if (string.IsNullOrWhiteSpace(place.Name) || string.IsNullOrWhiteSpace(place.Address))
             {
                 var provinces = await _unitOfWork.Provinces.GetAllAsync();
                 ViewBag.Provinces = new SelectList(provinces, "Id", "NameEn");
-                ModelState.AddModelError("", "Name, Address, and Category are required.");
+                ModelState.AddModelError("", "Name and Address are required.");
                 return View(place);
             }
 
             await _unitOfWork.Places.AddAsync(place);
-
-            // === التصليح هنا: شلنا الكومنت عشان يحفظ في الداتابيز ===
             await _unitOfWork.CompleteAsync();
-
             return RedirectToAction(nameof(ManagePlaces));
         }
 
@@ -87,14 +85,6 @@ namespace Morshed.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditPlace(Place place)
         {
-            if (string.IsNullOrWhiteSpace(place.Name) || string.IsNullOrWhiteSpace(place.Address))
-            {
-                var provinces = await _unitOfWork.Provinces.GetAllAsync();
-                ViewBag.Provinces = new SelectList(provinces, "Id", "NameEn", place.ProvinceId);
-                ModelState.AddModelError("", "Name and Address are required.");
-                return View(place);
-            }
-
             var existingPlace = await _unitOfWork.Places.GetByIdAsync(place.Id);
             if (existingPlace == null) return NotFound();
 
@@ -105,8 +95,6 @@ namespace Morshed.Web.Controllers
             existingPlace.Category = place.Category;
 
             _unitOfWork.Places.Update(existingPlace);
-
-            // === وتفعيل الحفظ هنا كمان ===
             await _unitOfWork.CompleteAsync();
 
             return RedirectToAction(nameof(ManagePlaces));
@@ -120,8 +108,6 @@ namespace Morshed.Web.Controllers
             if (place != null)
             {
                 _unitOfWork.Places.Remove(place);
-
-                // === وهنا عشان الحذف يتم ===
                 await _unitOfWork.CompleteAsync();
             }
             return RedirectToAction(nameof(ManagePlaces));
@@ -153,23 +139,37 @@ namespace Morshed.Web.Controllers
                 return View(province);
             }
 
-            var allProvinces = await _unitOfWork.Provinces.GetAllAsync();
-            if (allProvinces.Any(p => p.NameEn.ToLower() == province.NameEn.ToLower()))
-            {
-                ModelState.AddModelError("NameEn", "Province already exists.");
-                return View(province);
-            }
-
-            if (string.IsNullOrEmpty(province.NameAr)) province.NameAr = province.NameEn;
-            if (string.IsNullOrEmpty(province.ThumbnailUrl)) province.ThumbnailUrl = "/images/default_province.jpg";
-
             await _unitOfWork.Provinces.AddAsync(province);
-
-            // === وهنا عشان المحافظة تتحفظ ===
             await _unitOfWork.CompleteAsync();
 
             return RedirectToAction(nameof(ManageProvinces));
         }
+
+        [HttpGet]
+        public async Task<IActionResult> EditProvince(int id)
+        {
+            var province = await _unitOfWork.Provinces.GetByIdAsync(id);
+            if (province == null) return NotFound();
+            return View(province);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditProvince(Province province)
+        {
+            var existingProvince = await _unitOfWork.Provinces.GetByIdAsync(province.Id);
+            if (existingProvince == null) return NotFound();
+
+            existingProvince.NameEn = province.NameEn;
+            existingProvince.NameAr = province.NameAr;
+            existingProvince.Description = province.Description;
+
+            _unitOfWork.Provinces.Update(existingProvince);
+            await _unitOfWork.CompleteAsync();
+
+            return RedirectToAction(nameof(ManageProvinces));
+        }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -186,10 +186,11 @@ namespace Morshed.Web.Controllers
 
 
         // ==========================================
-        //  REVIEWS MANAGEMENT
+        //  REVIEWS MANAGEMENT (الأكشن اللي كان ناقصك)
         // ==========================================
         public async Task<IActionResult> ManageReviews()
         {
+            // هات كل المراجعات
             var reviews = await _unitOfWork.Reviews.GetAllAsync();
             return View(reviews);
         }
@@ -222,18 +223,13 @@ namespace Morshed.Web.Controllers
         public async Task<IActionResult> AssignRole(string userId, string role)
         {
             var user = await _userManager.FindByIdAsync(userId);
-            if (user == null) return NotFound();
-
-            if (!await _roleManager.RoleExistsAsync(role))
+            if (user != null)
             {
-                await _roleManager.CreateAsync(new IdentityRole(role));
-            }
+                if (!await _roleManager.RoleExistsAsync(role))
+                    await _roleManager.CreateAsync(new IdentityRole(role));
 
-            if (!await _userManager.IsInRoleAsync(user, role))
-            {
                 await _userManager.AddToRoleAsync(user, role);
             }
-
             return RedirectToAction(nameof(Users));
         }
 
@@ -241,7 +237,7 @@ namespace Morshed.Web.Controllers
         public async Task<IActionResult> RemoveRole(string userId, string role)
         {
             var user = await _userManager.FindByIdAsync(userId);
-            if (user != null && await _userManager.IsInRoleAsync(user, role))
+            if (user != null)
             {
                 await _userManager.RemoveFromRoleAsync(user, role);
             }
