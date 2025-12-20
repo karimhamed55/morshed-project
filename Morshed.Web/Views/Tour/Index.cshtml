@@ -1,0 +1,27 @@
+@model IEnumerable<Morshed.Core.Entities.Tour>
+
+@{
+    ViewData["Title"] = "My Tours";
+}
+
+<h1 class="mb-4">My Tours</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary"><i class="fas fa-plus"></i> Create New Tour</a>
+</p>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-pharaonic">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">@item.Province?.NameEn - @item.Days Days</h6>
+                    <p class="card-text">Stops: @(item.Stops?.Count ?? 0)</p>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-gold">View Itinerary</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

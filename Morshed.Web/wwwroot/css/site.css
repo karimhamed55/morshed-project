@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cairo:wght@400;700&display=swap');
+
+:root {
+    --gold: #D4AF37;
+    --blue: #26619C;
+    --dark: #1a1a1a;
+    --light: #f4f4f4;
+    --papyrus: url('https://www.transparenttextures.com/patterns/papyrus.png'); /* Fallback or use local if available */
+}
+
+body {
+    font-family: 'Cairo', sans-serif; /* Good for Arabic and English */
+    background-color: var(--light);
+    background-image: var(--papyrus);
+    color: var(--dark);
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Cinzel', serif;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--blue) !important;
+    border-bottom: 3px solid var(--gold);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.navbar-brand, .nav-link {
+    color: var(--gold) !important;
+}
+
+.nav-link:hover {
+    color: #fff !important;
+    text-shadow: 0 0 5px var(--gold);
+}
+
+/* Cards */
+.card {
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(197, 160, 23, 0.3);
+}
+
+.card-header {
+    background-color: var(--blue);
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    border-bottom: 2px solid var(--gold);
+}
+
+.card-img-top {
+    border-bottom: 2px solid var(--gold);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--blue);
+    border-color: var(--gold);
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--gold);
+    color: var(--blue);
+    border-color: var(--blue);
+}
+
+.btn-gold {
+    background-color: var(--gold);
+    color: var(--blue);
+    border: 1px solid var(--blue);
+}
+
+.btn-gold:hover {
+    background-color: #bfa130;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark);
+    color: var(--gold);
+    border-top: 3px solid var(--gold);
+    padding: 20px 0;
+}
+
+/* Utilities */
+.text-gold { color: var(--gold) !important; }
+.text-blue { color: var(--blue) !important; }
+.bg-gold { background-color: var(--gold) !important; }
+.bg-blue { background-color: var(--blue) !important; }
+
+.border-pharaonic {
+    border: 2px solid var(--gold);
+    position: relative;
+}
+
+.border-pharaonic::after {
+    content: '';
+    position: absolute;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    border: 1px solid var(--blue);
+    pointer-events: none;
+}

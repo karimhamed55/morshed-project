@@ -1,0 +1,185 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Contact Us";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morshed - Contact Us</title>
+
+    <!-- Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css?v=1.2">
+    <link rel="stylesheet" href="~/css/contact.css?v=1.0">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header1">
+            <div class="container d-flex justify-content-between align-items-center">
+                <ul class="list-inline mt-2 small contact-list">
+                    <li class="contact-item"><a href="#"><span class="contact-icon"><i class="fas fa-phone-alt"></i></span> +20 221 121 573</a></li>
+                    <li class="list-inline-item head-header"><a asp-controller="Home" asp-action="Index">The official site of Morshed</a></li>
+                </ul>
+                <ul class="list-inline mb-0 small d-flex align-items-center gap-2">
+                    <li class="list-inline-item"><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo-left.png" width="65" height="65">
+                    <img src="~/images/Logo-right.png" width="140" height="35" class="mt-1">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Province" asp-action="Index">PROVINCES</a></li>
+                        <li class="nav-item"><a class="nav-link active" asp-controller="Home" asp-action="Contact">CONTACT US</a></li>
+                    </ul>
+                    <a asp-controller="Auth" asp-action="Register" class="btn-nav btn-signup ms-3 text-decoration-none">Signup</a>
+                    <a asp-controller="Auth" asp-action="Login" class="btn-nav btn-login ms-3 text-decoration-none">Login</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <div class="contact-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Get in Touch</h1>
+            <p class="hero-subtitle">We'd love to hear from you. Let's plan your next adventure!</p>
+        </div>
+    </div>
+
+    <!-- CONTACT CONTENT -->
+    <div class="contact-container">
+
+        <!-- Left Column: Info Cards -->
+        <div class="info-wrapper">
+            <div class="info-card">
+                <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="info-content">
+                    <h3>Visit Us</h3>
+                    <p>123 Pyramids Road, Giza, Egypt</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+                <div class="info-content">
+                    <h3>Call Us</h3>
+                    <p>+20 123 456 789</p>
+                    <p>+20 111 222 333</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                <div class="info-content">
+                    <h3>Email Us</h3>
+                    <p>info@morshed.com</p>
+                    <p>support@morshed.com</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="icon-box"><i class="fas fa-clock"></i></div>
+                <div class="info-content">
+                    <h3>Working Hours</h3>
+                    <p>Sat - Thu: 9:00 AM - 6:00 PM</p>
+                    <p>Friday: Closed</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Form -->
+        <div class="form-card">
+            <div class="form-header">
+                <h2>Send Message</h2>
+                <h1>We are here to help</h1>
+            </div>
+            <form>
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label>Your Name</label>
+                        <input type="text" placeholder="Ahmed Mohamed">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="example@mail.com">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Subject</label>
+                    <input type="text" placeholder="Tour Inquiry">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="5" placeholder="Tell us what you need..."></textarea>
+                </div>
+                <button type="button" class="btn-send">Send Message <i class="fas fa-paper-plane ms-2"></i></button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- MAP SECTION -->
+    <div class="map-section">
+        <div class="map-frame">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.6436609275973!2d31.131682476259183!3d29.97729627502722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14584f7de239bbcd%3A0xca7474355a6e368b!2sGiza%20Necropolis!5e0!3m2!1sen!2seg!4v1709229283509!5m2!1sen!2seg" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer style="font-family: 'Poppins', sans-serif; color:#eaf4f9; background-color:#0e1a24; padding-top:30px;">
+        <div class="uperparent" style="display:flex; flex-wrap:nowrap; justify-content:space-between; align-items:center; padding:0 80px 30px; border-bottom: 1px solid rgba(1, 165, 198, 0.3); gap: 20px;">
+            <div class="leftupper" style="text-align:center;">
+                <h3 style="margin:0; font-size:20px; font-family:'Dancing Script';">Beyond the Pyramids:</h3>
+                <h5 style="margin:5px 0 0 0; font-size:16px;">Experience the Heart of Egypt.</h5>
+            </div>
+            <div class="middleupper" style="display:flex; gap:10px;">
+                <input type="email" placeholder="Enter your email" style="padding:8px 12px; border-radius:5px; background:rgba(255,255,255,0.05); border:1px solid #01a5c6; color:white;">
+                <button style="padding:8px 15px; border:none; border-radius:5px; background:#01a5c6; color:white; cursor:pointer;">Subscribe</button>
+            </div>
+            <div class="rightupper" style="display:flex; gap:15px; font-size:18px;">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+        <div class="midlleparent" style="padding:40px 80px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px;">
+            <div class="leftmiddle"><img src="~/images/Logo.png" style="max-width:180px;"></div>
+            <div class="contactmiddle">
+                <h3 style="color:#d8b459; font-family:'Playfair Display';">Contacts</h3>
+                <ul style="list-style:none; padding:0; color:#ccc;">
+                    <li>info@visitegypt.com</li>
+                    <li>+20 123 456 789</li>
+                    <li>Cairo, Egypt</li>
+                </ul>
+            </div>
+            <div class="mid1middle">
+                <h3 style="color:#d8b459; font-family:'Playfair Display';">Explore</h3>
+                <ul style="list-style:none; padding:0; color:#ccc;">
+                    <li><a href="#" style="color:#ccc; text-decoration:none;">About Us</a></li>
+                    <li><a href="#" style="color:#ccc; text-decoration:none;">Tours</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="lowerparent" style="text-align:center; padding:20px 0; font-size:14px; border-top:1px solid rgba(255,255,255,0.05);">
+            <p>Copyright © 2025 Morshed.com</p>
+        </div>
+    </footer>
+
+    <script src="~/js/bootstrap.min.js"></script>
+</body>
+</html>

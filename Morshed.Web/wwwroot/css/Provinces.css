@@ -1,0 +1,510 @@
+/* === Morshed Global Colors === */
+:root {
+    --primary-dark: #0e1a24;
+    --gold: #d8b459;
+    --turquoise: #01a5c6;
+    --white: #ffffff;
+    --light-bg: #fcfcfc;
+    --sidebar-width: 140px;
+}
+
+/* === Font Face: Reey (لو احتجناه في عناوين تانية) === */
+@font-face {
+    font-family: 'Reey';
+    src: url('../fonts/reey/Reey-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--light-bg);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   PART 1: INDEX PAGE STYLES (Grid View)
+   ========================================================= */
+.provinces-header {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+    .provinces-header .sub-title {
+        font-family: 'Dancing Script', cursive;
+        color: var(--turquoise);
+        font-size: 2.5rem;
+        margin-bottom: 5px;
+    }
+
+    .provinces-header .main-title {
+        font-family: 'Playfair Display', serif;
+        color: var(--primary-dark);
+        font-size: 3.5rem;
+        font-weight: 700;
+    }
+
+.provinces-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+    padding: 20px 5%;
+    margin-bottom: 80px;
+}
+
+.province-card {
+    background: var(--white);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+}
+
+    .province-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 3px;
+        background: linear-gradient(135deg, var(--gold), var(--turquoise));
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    .province-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+.card-img-wrap {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px 20px 0 0;
+}
+
+    .card-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.6s ease;
+    }
+
+.province-card:hover .card-img-wrap img {
+    transform: scale(1.1);
+}
+
+.card-img-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(14,26,36,0.8), transparent);
+    z-index: 1;
+}
+
+.ar-name-badge {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    z-index: 3;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.province-card .card-body {
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.province-card .card-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-dark);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.province-card .card-text {
+    font-family: 'Poppins', sans-serif;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.btn-explore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 50px;
+    background: transparent;
+    border: 2px solid var(--turquoise);
+    color: var(--turquoise);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+    .btn-explore:hover {
+        background: var(--turquoise);
+        color: var(--white);
+    }
+
+
+/* =========================================================
+   PART 2: DETAILS PAGE STYLES (Vertical Layout)
+   ========================================================= */
+
+.city-page-layout {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
+    min-height: 100vh;
+}
+
+/* === 1. Left Vertical Sidebar (Gradient Line Fixed) === */
+.vertical-sidebar {
+    background: linear-gradient(180deg, var(--primary-dark) 0%, #1a2f3f 100%);
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 100;
+    box-shadow: 5px 0 30px rgba(0,0,0,0.2);
+    /* لغيت البوردر العادي عشان هنعمل واحد متدرج */
+    border-right: none;
+}
+
+    /* الخط الرفيع المتدرج على اليمين */
+    .vertical-sidebar::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 4px; /* سمك الخط */
+        height: 100%;
+        /* التدرج بتاعنا */
+        background: linear-gradient(to bottom, var(--gold), var(--turquoise));
+        z-index: 101;
+    }
+
+.vertical-text-wrapper {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.vertical-city-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 3px;
+    opacity: 0.9;
+    transition: 0.4s ease;
+    cursor: default;
+    text-shadow: 3px 3px 0px var(--primary-dark), 0 0 15px rgba(255,255,255,0.1);
+}
+
+.vertical-sidebar:hover .vertical-city-name {
+    opacity: 1;
+    color: var(--gold);
+    transform: scale(1.02);
+}
+
+.scroll-indicator {
+    color: var(--turquoise);
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Content */
+.main-content-area {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.city-hero {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    border-bottom-left-radius: 60px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+    .city-hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 8s ease;
+    }
+
+    .city-hero:hover img {
+        transform: scale(1.05);
+    }
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--primary-dark), transparent 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px 80px;
+}
+
+.btn-back-home {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: 0.3s;
+    z-index: 10;
+}
+
+    .btn-back-home:hover {
+        background: var(--turquoise);
+        border-color: var(--turquoise);
+        color: white;
+    }
+
+.hero-title {
+    font-family: 'Reey', sans-serif;
+    color: var(--gold);
+    font-size: 6rem;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1;
+    text-shadow: 4px 4px 15px rgba(0,0,0,0.6);
+    transform: rotate(-3deg);
+    display: inline-block;
+    width: fit-content;
+}
+
+.hero-subtitle {
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+
+.content-wrapper {
+    padding: 80px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+/* Detail Cards */
+.content-card {
+    position: relative;
+    background: var(--white);
+    padding: 60px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+    isolation: isolate;
+}
+
+    .content-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 2px;
+        background: linear-gradient(135deg, var(--gold), var(--turquoise));
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+.details-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-dark);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+    .details-title i {
+        color: var(--turquoise);
+        font-size: 2rem;
+    }
+
+.details-text {
+    font-size: 1.15rem;
+    line-height: 2;
+    color: #555;
+    text-align: justify;
+}
+
+/* Places Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.place-item {
+    background: #fff;
+    border-radius: 20px;
+    padding: 35px;
+    border: 1px solid #eee;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    /* التعديل المهم: المحاذاة لليسار عشان البادج يبقى صغير */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+}
+
+    .place-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        border-color: transparent;
+    }
+
+    .place-item::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 6px;
+        background: linear-gradient(to bottom, var(--gold), var(--turquoise));
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    .place-item:hover::after {
+        opacity: 1;
+    }
+
+/* Map */
+.map-frame {
+    width: 100%;
+    height: 500px;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 5px solid white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    outline: 2px solid var(--gold);
+}
+
+/* Footer (Short Version Style) */
+.lowerparent {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .city-page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .vertical-sidebar {
+        display: none;
+    }
+
+    .content-wrapper {
+        padding: 40px 20px;
+    }
+
+    .hero-title {
+        font-size: 4rem;
+    }
+}
+
+.btn-back-provinces {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    color: var(--gold);
+    background: rgba(14, 26, 36, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    border: 2px dotted transparent;
+    background-image: linear-gradient(rgba(14, 26, 36, 0.8), rgba(14, 26, 36, 0.8)), linear-gradient(to right, var(--gold), var(--turquoise));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    transition: 0.3s;
+    opacity: 0.7;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+    .btn-back-provinces:hover {
+        color: var(--turquoise);
+        border-style: solid;
+        border-color: transparent;
+        opacity: 0.9;
+        transition: 1s;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(216, 180, 89, 0.4);
+    }

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="admin-wrapper">
+
+       
+
+        <!-- MAIN CONTENT -->
+        <div class="admin-content">
+
+            <!-- Top Header -->
+            <div class="dashboard-header">
+                <div>
+                    <h1>@ViewData["Title"]</h1>
+                    <p class="text-muted mb-0">Welcome back, Admin!</p>
+                </div>
+
+                <div class="admin-user-info">
+                    <span class="fw-bold">@User.Identity?.Name</span>
+                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=0D8ABC&color=fff" alt="Admin">
+                </div>
+            </div>
+
+            <!-- Page Content Injection -->
+            @RenderBody()
+
+        </div>
+    </div>
+
+    <script src="~/js/bootstrap.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

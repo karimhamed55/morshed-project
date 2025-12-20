@@ -1,0 +1,40 @@
+@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>
+
+@{
+    ViewData["Title"] = "Manage Roles";
+}
+
+<h1>Manage Roles</h1>
+
+<div class="card border-pharaonic">
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Email / Username</th>
+                    <th>ID</th>
+                    <th>Assign Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Email</td>
+                        <td>@user.Id</td>
+                        <td>
+                            <form asp-action="AssignRole" method="post" class="d-flex align-items-center">
+                                <input type="hidden" name="userId" value="@user.Id" />
+                                <select name="role" class="form-select form-select-sm me-2" style="width: auto;">
+                                    <option value="Admin">Admin</option>
+                                    <option value="User">User</option>
+                                </select>
+                                <button type="submit" class="btn btn-sm btn-primary">Assign</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
