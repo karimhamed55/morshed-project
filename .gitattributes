@@ -1,3 +1,11 @@
-wwwroot/lib/* linguist-vendored
-*.min.css linguist-vendored
-*.min.js linguist-vendored
+# This tells GitHub to ignore the thousands of lines of Bootstrap/jQuery code.
+wwwroot/lib/** linguist-vendored
+
+# 2. Hide any individual third-party files that might be outside of /lib
+wwwroot/css/bootstrap.min.css linguist-vendored
+wwwroot/js/bootstrap.min.js linguist-vendored
+# 3. Handle the Razor Views (.cshtml)
+# If you want C# to stay dominant, keep this line. 
+# If C# is TOO high (like 99%), remove this line so .cshtml counts as HTML.
+*.cshtml linguist-language=C#
+
