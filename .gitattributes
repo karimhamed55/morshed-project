@@ -1,7 +1,3 @@
 wwwroot/lib/* linguist-vendored
-
-*.css linguist-vendored
-
-*.cshtml linguist-language=C#
-
-**/Migrations/* linguist-generated
+*.min.css linguist-vendored
+*.min.js linguist-vendored
