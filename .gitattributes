@@ -1,5 +1,0 @@
-wwwroot/lib/** linguist-vendored
-wwwroot/css/bootstrap.min.css linguist-vendored
-wwwroot/js/bootstrap.min.js linguist-vendored
-*.cshtml linguist-language=C
-
