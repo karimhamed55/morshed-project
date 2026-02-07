@@ -10,7 +10,7 @@ namespace Morshed.Core.Entities
 
         public int ProvinceId { get; set; }
         public Province Province { get; set; }
-
+//name
         public string Title { get; set; }
         public int Days { get; set; }
 
