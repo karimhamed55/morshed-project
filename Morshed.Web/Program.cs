@@ -51,7 +51,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
 
-// Seed Data
+// Seed Dataa
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
