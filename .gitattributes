@@ -1,3 +1,4 @@
 wwwroot/lib/** linguist-vendored
-**/bin/* linguist-generated
-**/obj/* linguist-generated
+wwwroot/css/bootstrap* linguist-vendored
+wwwroot/js/bootstrap* linguist-vendored
+*.cshtml linguist-language=C#
